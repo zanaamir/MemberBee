@@ -825,7 +825,7 @@
           <End Role="Club" Type="Self.Club" Multiplicity="*" />
           <End Role="Categories" Type="Self.Category" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="memberBeeEntitiesDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="memberBeeEntitiesDB" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="Benefit_Types" EntityType="Self.Benefit_Type" />
           <EntitySet Name="Branches" EntityType="Self.Branch" />
           <EntitySet Name="Brands" EntityType="Self.Brand" />
