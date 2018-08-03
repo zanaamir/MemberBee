@@ -1,2 +1,3 @@
 C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csprojResolveAssemblyReference.cache
 C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csproj.CoreCompileInputs.cache
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csprojResolveAssemblyReference.cache

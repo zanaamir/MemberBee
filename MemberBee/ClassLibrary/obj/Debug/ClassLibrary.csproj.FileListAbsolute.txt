@@ -9,3 +9,13 @@ C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassL
 C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\AMIR\Desktop\mem1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb
