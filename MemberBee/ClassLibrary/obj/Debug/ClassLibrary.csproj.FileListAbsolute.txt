@@ -1,0 +1,11 @@
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\519\Desktop\memberbee\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb

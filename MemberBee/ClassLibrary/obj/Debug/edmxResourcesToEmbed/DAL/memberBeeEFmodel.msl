@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="memberBeeModelStoreContainer" CdmEntityContainer="memberBeeEntitiesDB">
+    <EntitySetMapping Name="Benefit_Types">
+      <EntityTypeMapping TypeName="memberBeeModel.Benefit_Type">
+        <MappingFragment StoreEntitySet="Benefit Type">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="memberBeeModel.Branch">
+        <MappingFragment StoreEntitySet="Branch">
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BrandBrandCode" ColumnName="BrandBrandCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="googleMapURL" ColumnName="googleMapURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="memberBeeModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="memberBeeModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories1">
+      <EntityTypeMapping TypeName="memberBeeModel.Category1">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Children">
+      <EntityTypeMapping TypeName="memberBeeModel.Child">
+        <MappingFragment StoreEntitySet="Child">
+          <ScalarProperty Name="ChildCode" ColumnName="ChildCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SurName" ColumnName="SurName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="memberBeeModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityNumber" ColumnName="CityNumber" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clubs">
+      <EntityTypeMapping TypeName="memberBeeModel.Club">
+        <MappingFragment StoreEntitySet="Club">
+          <ScalarProperty Name="ClubId" ColumnName="ClubId" />
+          <ScalarProperty Name="ClubName" ColumnName="ClubName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="Image_Logo" ColumnName="Image_Logo" />
+          <ScalarProperty Name="URL_Internet_site" ColumnName="URL_Internet_site" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Club_Benefit_Type">
+      <EntityTypeMapping TypeName="memberBeeModel.Club_Benefit_Type">
+        <MappingFragment StoreEntitySet="Club_Benefit Type">
+          <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+          <ScalarProperty Name="Benefit_TypeCode" ColumnName="Benefit TypeCode" />
+          <ScalarProperty Name="Specific_Benefit" ColumnName="Specific Benefit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Club_Customer">
+      <EntityTypeMapping TypeName="memberBeeModel.Club_Customer">
+        <MappingFragment StoreEntitySet="Club_Customer">
+          <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+          <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Club_Required_Fields">
+      <EntityTypeMapping TypeName="memberBeeModel.Club_Required_Fields">
+        <MappingFragment StoreEntitySet="Club_Required Fields">
+          <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
+          <ScalarProperty Name="Required_FieldsFileldNo" ColumnName="Required FieldsFileldNo" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="memberBeeModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MainMail" ColumnName="MainMail" />
+          <ScalarProperty Name="SpamMail" ColumnName="SpamMail" />
+          <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
+          <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
+          <ScalarProperty Name="NoOfKids" ColumnName="NoOfKids" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="MarrigeDate" ColumnName="MarrigeDate" />
+          <ScalarProperty Name="SignDate" ColumnName="SignDate" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_subCategory">
+      <EntityTypeMapping TypeName="memberBeeModel.Customer_subCategory">
+        <MappingFragment StoreEntitySet="Customer_subCategory">
+          <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
+          <ScalarProperty Name="subCategorySubNo" ColumnName="subCategorySubNo" />
+          <ScalarProperty Name="checkedDate" ColumnName="checkedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Required_Fields">
+      <EntityTypeMapping TypeName="memberBeeModel.Required_Field">
+        <MappingFragment StoreEntitySet="Required Fields">
+          <ScalarProperty Name="FileldNo" ColumnName="FileldNo" />
+          <ScalarProperty Name="FiledName" ColumnName="FiledName" />
+          <ScalarProperty Name="RefTable" ColumnName="RefTable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subCategories">
+      <EntityTypeMapping TypeName="memberBeeModel.subCategory">
+        <MappingFragment StoreEntitySet="subCategory">
+          <ScalarProperty Name="SubNo" ColumnName="SubNo" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="CategoriesCategoryNo" ColumnName="CategoriesCategoryNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Brand_Category" TypeName="memberBeeModel.Brand_Category" StoreEntitySet="Brand_Category">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryNo" ColumnName="CategoryCategoryNo" />
+      </EndProperty>
+      <EndProperty Name="Brand">
+        <ScalarProperty Name="BrandCode" ColumnName="BrandBrandCode" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Club_Categories" TypeName="memberBeeModel.Club_Categories" StoreEntitySet="Club_Categories">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="ClubId" ColumnName="ClubClubId" />
+      </EndProperty>
+      <EndProperty Name="Categories">
+        <ScalarProperty Name="CategoryNo" ColumnName="CategoriesCategoryNo" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
