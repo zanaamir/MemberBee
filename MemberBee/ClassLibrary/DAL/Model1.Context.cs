@@ -13,12 +13,11 @@ namespace ClassLibrary.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class memberBeeEntitiesDB : DbContext
+    public partial class igroup36_prodEntities : DbContext
     {
-        public memberBeeEntitiesDB()
-            : base("name=memberBeeEntitiesDB")
+        public igroup36_prodEntities()
+            : base("name=igroup36_prodEntities")
         {
-            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V2</title>
+	<title>ברוכים הבאים MEMBERBEE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -34,15 +34,13 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
-
-                        <img src="images/icons/LOGO (2).png" />
+                        <img src="images/icons/LOGO (2).png" style="width:70%;" />
+                      
 					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
+					
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" name="email" id="insert_email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -50,14 +48,14 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						<input class="input100" type="tel" name="pass" id="insert_phone">
+						<span class="focus-input100" data-placeholder="Phone number"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" onclick="chekcustomer()">
 								Login
 							</button>
 						</div>
@@ -95,7 +93,56 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <script src="js/main.js">
+       
+
+        function chekcustomer() {
+
+            var email = $("#insert_email").val();
+            var phone = $("#insert_phone").val();
+
+            $.ajax({
+                datatype: "json",
+                url: "/api/Login/" +email +"/"+phone ,
+                contentType: "application/json; charset=utf-8",
+                method: "GET",
+                success: function (data) {
+                    to_purchase_screen(data)
+                },
+                error: function (err) {
+                    console.log(err)
+                 DelayNode.alert("Wrong id or Wrong name")
+
+                }
+            });
+        }
+
+        function to_benefit_screen(status) {
+            if (status == false) {
+
+                alert("Wrong id or Wrong name. Please check capital letter")
+
+            }
+            else { window.open("/client/LoginSucsses.html","_self") }
+            }
+
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
+        }
+
+
+    
+    </script>
 
 </body>
 </html>

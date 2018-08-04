@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="memberBeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="igroup36_prodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Benefit Type">
           <Key>
             <PropertyRef Name="Code" />
@@ -379,7 +379,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="memberBeeModelStoreContainer">
+        <EntityContainer Name="igroup36_prodModelStoreContainer">
           <EntitySet Name="Benefit Type" EntityType="Self.Benefit Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
@@ -474,7 +474,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="memberBeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="igroup36_prodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Benefit_Type">
           <Key>
             <PropertyRef Name="Code" />
@@ -825,7 +825,7 @@
           <End Role="Club" Type="Self.Club" Multiplicity="*" />
           <End Role="Categories" Type="Self.Category" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="memberBeeEntitiesDB" annotation:LazyLoadingEnabled="false">
+        <EntityContainer Name="igroup36_prodEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Benefit_Types" EntityType="Self.Benefit_Type" />
           <EntitySet Name="Branches" EntityType="Self.Branch" />
           <EntitySet Name="Brands" EntityType="Self.Brand" />
@@ -911,9 +911,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="memberBeeModelStoreContainer" CdmEntityContainer="memberBeeEntitiesDB">
+        <EntityContainerMapping StorageEntityContainer="igroup36_prodModelStoreContainer" CdmEntityContainer="igroup36_prodEntities">
           <EntitySetMapping Name="Benefit_Types">
-            <EntityTypeMapping TypeName="memberBeeModel.Benefit_Type">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Benefit_Type">
               <MappingFragment StoreEntitySet="Benefit Type">
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -921,7 +921,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Branches">
-            <EntityTypeMapping TypeName="memberBeeModel.Branch">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Branch">
               <MappingFragment StoreEntitySet="Branch">
                 <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
                 <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
@@ -934,7 +934,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Brands">
-            <EntityTypeMapping TypeName="memberBeeModel.Brand">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Brand">
               <MappingFragment StoreEntitySet="Brand">
                 <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
                 <ScalarProperty Name="BrandName" ColumnName="BrandName" />
@@ -944,7 +944,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="memberBeeModel.Category">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Category">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -952,7 +952,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories1">
-            <EntityTypeMapping TypeName="memberBeeModel.Category1">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Category1">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -960,7 +960,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Children">
-            <EntityTypeMapping TypeName="memberBeeModel.Child">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Child">
               <MappingFragment StoreEntitySet="Child">
                 <ScalarProperty Name="ChildCode" ColumnName="ChildCode" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -972,7 +972,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="memberBeeModel.City">
+            <EntityTypeMapping TypeName="igroup36_prodModel.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="CityNumber" ColumnName="CityNumber" />
                 <ScalarProperty Name="CityName" ColumnName="CityName" />
@@ -980,7 +980,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clubs">
-            <EntityTypeMapping TypeName="memberBeeModel.Club">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club">
               <MappingFragment StoreEntitySet="Club">
                 <ScalarProperty Name="ClubId" ColumnName="ClubId" />
                 <ScalarProperty Name="ClubName" ColumnName="ClubName" />
@@ -992,7 +992,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Club_Benefit_Type">
-            <EntityTypeMapping TypeName="memberBeeModel.Club_Benefit_Type">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Benefit_Type">
               <MappingFragment StoreEntitySet="Club_Benefit Type">
                 <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
                 <ScalarProperty Name="Benefit_TypeCode" ColumnName="Benefit TypeCode" />
@@ -1001,7 +1001,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Club_Customer">
-            <EntityTypeMapping TypeName="memberBeeModel.Club_Customer">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Customer">
               <MappingFragment StoreEntitySet="Club_Customer">
                 <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
                 <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
@@ -1010,7 +1010,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Club_Required_Fields">
-            <EntityTypeMapping TypeName="memberBeeModel.Club_Required_Fields">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Club_Required_Fields">
               <MappingFragment StoreEntitySet="Club_Required Fields">
                 <ScalarProperty Name="ClubClubId" ColumnName="ClubClubId" />
                 <ScalarProperty Name="Required_FieldsFileldNo" ColumnName="Required FieldsFileldNo" />
@@ -1019,7 +1019,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="memberBeeModel.Customer">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
                 <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -1039,7 +1039,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customer_subCategory">
-            <EntityTypeMapping TypeName="memberBeeModel.Customer_subCategory">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Customer_subCategory">
               <MappingFragment StoreEntitySet="Customer_subCategory">
                 <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
                 <ScalarProperty Name="subCategorySubNo" ColumnName="subCategorySubNo" />
@@ -1048,7 +1048,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Required_Fields">
-            <EntityTypeMapping TypeName="memberBeeModel.Required_Field">
+            <EntityTypeMapping TypeName="igroup36_prodModel.Required_Field">
               <MappingFragment StoreEntitySet="Required Fields">
                 <ScalarProperty Name="FileldNo" ColumnName="FileldNo" />
                 <ScalarProperty Name="FiledName" ColumnName="FiledName" />
@@ -1057,7 +1057,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="subCategories">
-            <EntityTypeMapping TypeName="memberBeeModel.subCategory">
+            <EntityTypeMapping TypeName="igroup36_prodModel.subCategory">
               <MappingFragment StoreEntitySet="subCategory">
                 <ScalarProperty Name="SubNo" ColumnName="SubNo" />
                 <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
@@ -1065,7 +1065,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Brand_Category" TypeName="memberBeeModel.Brand_Category" StoreEntitySet="Brand_Category">
+          <AssociationSetMapping Name="Brand_Category" TypeName="igroup36_prodModel.Brand_Category" StoreEntitySet="Brand_Category">
             <EndProperty Name="Category">
               <ScalarProperty Name="CategoryNo" ColumnName="CategoryCategoryNo" />
             </EndProperty>
@@ -1073,7 +1073,7 @@
               <ScalarProperty Name="BrandCode" ColumnName="BrandBrandCode" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="Club_Categories" TypeName="memberBeeModel.Club_Categories" StoreEntitySet="Club_Categories">
+          <AssociationSetMapping Name="Club_Categories" TypeName="igroup36_prodModel.Club_Categories" StoreEntitySet="Club_Categories">
             <EndProperty Name="Club">
               <ScalarProperty Name="ClubId" ColumnName="ClubClubId" />
             </EndProperty>

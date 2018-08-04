@@ -53,92 +53,89 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DAL\Benefit_Type.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Branch.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Brand.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Category.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Category1.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Child.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\City.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Club.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Club_Benefit_Type.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Club_Customer.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Club_Required_Fields.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Customer.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Customer_subCategory.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\memberBeeEFmodel.Context.cs">
+    <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>memberBeeEFmodel.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\memberBeeEFmodel.cs">
+    <Compile Include="DAL\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\memberBeeEFmodel.Designer.cs">
+    <Compile Include="DAL\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>memberBeeEFmodel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Required_Field.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\subCategory.cs">
-      <DependentUpon>memberBeeEFmodel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EntityDeploy Include="DAL\memberBeeEFmodel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>memberBeeEFmodel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Content Include="DAL\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="DAL\memberBeeEFmodel.edmx.diagram">
-      <DependentUpon>memberBeeEFmodel.edmx</DependentUpon>
+    <EntityDeploy Include="DAL\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DAL\memberBeeEFmodel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>memberBeeEFmodel.edmx</DependentUpon>
-      <LastGenOutput>memberBeeEFmodel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\memberBeeEFmodel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>memberBeeEFmodel.edmx</DependentUpon>
-      <LastGenOutput>memberBeeEFmodel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

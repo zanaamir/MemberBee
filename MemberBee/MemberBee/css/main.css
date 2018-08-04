@@ -35,13 +35,16 @@
 	margin: 0px; 
 	padding: 0px; 
 	box-sizing: border-box;
+        
 }
 
 body, html {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
 }
-
+img{
+    width:100%
+}
 /*---------------------------------------------*/
 a {
 	font-family: Poppins-Regular;
@@ -126,7 +129,7 @@ textarea:-ms-input-placeholder { color: #adadad;}
 button {
 	outline: none !important;
 	border: none;
-	background: transparent;
+	background: #ff7200;
 }
 
 button:hover {
