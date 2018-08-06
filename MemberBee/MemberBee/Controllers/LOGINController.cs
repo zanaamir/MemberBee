@@ -12,13 +12,13 @@ namespace MemberBee.Controllers
     public class LOGINController : ApiController
     {
          
-        [Route("api/Login/{phone}/{id}")]
+        [Route("api/LOGIN/{email}/{phone}")]
         // GET: api/Login
-        public bool Get(int phone, int id)
+        public bool Get(string email, int phone)
         {
                igroup36_prodEntities db   = new igroup36_prodEntities();
 
-            Customer C = db.Customers.SingleOrDefault(x => x.IdNumber == id);
+            Customer C = db.Customers.SingleOrDefault(x => x.MainMail == email);
 
 
 
