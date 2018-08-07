@@ -4,6 +4,9 @@
 	<title>ברוכים הבאים MEMBERBEE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -23,9 +26,50 @@
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
+    <!--ספריות מוספות שלנו -->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--===============================================================================================-->
+    <script>
+        function chekcustomer() {
+
+       $("#loder").removeClass("w3-hide");
+
+      var email = $("#insert_email").val();
+      var phone = $("#insert_phone").val();
+
+      $.ajax({
+          datatype: "json",
+          url: "/api/LOGIN/" + email + "/" + phone,
+          contentType: "application/json; charset=utf-8",
+          method: "GET",
+          success: function (data) {
+
+              to_benefit_screen(data);
+
+          },
+          error: function (err) {
+              console.log(err)
+
+              DelayNode.alert("Wrong id or Wrong name")
+
+          }
+      });
+  }
+
+        function to_benefit_screen(status) {
+            if (status == false) {
+
+               $("#login-btn").html("<h3>try again</h3>")
+
+            }
+            else { window.open("/template/index.html", "_self") }
+        }
+
+    </script>
 </head>
 <body>
 	
@@ -55,9 +99,12 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" onclick="chekcustomer()">
+							<button class="login100-form-btn" id="login-btn" onclick="chekcustomer()" type="button">
+                                
 								Login
+                               <i class="fa fa-refresh w3-spin w3-hide" id="loder" ></i>
 							</button>
+                            
 						</div>
 					</div>
 
@@ -74,72 +121,12 @@
 			</div>
 		</div>
 	</div>
+
+
 	
+    
 
-	<div id="dropDownSelect1"></div>
 	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-    <script src="js/main.js"></script>
-    <script>  function chekcustomer() {
-     
-      var email = $("#insert_email").val();
-      var phone = $("#insert_phone").val();
-
-      $.ajax({
-          datatype: "json",
-          url: "/api/LOGIN/" + email + "/" + phone,
-          contentType: "application/json; charset=utf-8",
-          method: "GET",
-          success: function (data) {
-              
-              window.open("/client/HtmlPage1.html", "_self");
-          
-          },
-          error: function (err) {
-              console.log(err)
-
-              DelayNode.alert("Wrong id or Wrong name")
-
-          }
-      });
-  }
-
-        function to_benefit_screen(status) {
-            if (status == false) {
-
-                alert("Wrong id or Wrong name. Please check capital letter")
-
-            }
-            else { window.open("/client/HtmlPage1.html", "_self") }
-        }
-
-        function move() {
-            var elem = document.getElementById("myBar");
-            var width = 1;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++;
-                    elem.style.width = width + '%';
-                }
-            }
-        }
-</script>
+    
 </body>
 </html>

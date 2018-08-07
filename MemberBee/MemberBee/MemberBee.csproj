@@ -362,6 +362,15 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="template\about.html" />
+    <Content Include="template\blog.html" />
+    <Content Include="template\classes-single.html" />
+    <Content Include="template\classes.html" />
+    <Content Include="template\contact.html" />
+    <Content Include="template\event.html" />
+    <Content Include="template\index.html" />
+    <Content Include="template\schedule.html" />
+    <Content Include="template\shop.html" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -413,9 +422,17 @@
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="template\.DS_Store" />
+    <Content Include="template\prepros-6.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="template\.sass-cache\" />
+    <Folder Include="template\css\" />
+    <Folder Include="template\fonts\" />
+    <Folder Include="template\images\" />
+    <Folder Include="template\js\" />
+    <Folder Include="template\sass\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
