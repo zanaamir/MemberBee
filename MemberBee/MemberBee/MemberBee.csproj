@@ -368,6 +368,11 @@
     <Content Include="template\classes.html" />
     <Content Include="template\contact.html" />
     <Content Include="template\event.html" />
+    <Content Include="template\images\adolescent-adult-casual-207582.jpg" />
+    <Content Include="template\images\adult-asphalt-backpack-681294.jpg" />
+    <Content Include="template\images\adult-bag-buying-1068527.jpg" />
+    <Content Include="template\images\adult-beverage-cappuccino-377909.jpg" />
+    <Content Include="template\images\IMG_20180316_044249_831.jpg" />
     <Content Include="template\index.html" />
     <Content Include="template\schedule.html" />
     <Content Include="template\shop.html" />
@@ -430,7 +435,6 @@
     <Folder Include="template\.sass-cache\" />
     <Folder Include="template\css\" />
     <Folder Include="template\fonts\" />
-    <Folder Include="template\images\" />
     <Folder Include="template\js\" />
     <Folder Include="template\sass\" />
   </ItemGroup>
