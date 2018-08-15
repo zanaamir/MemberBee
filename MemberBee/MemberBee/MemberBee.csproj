@@ -377,13 +377,21 @@
     <Content Include="template\css\owl.theme.default.min.css" />
     <Content Include="template\css\style.css" />
     <Content Include="template\event.html" />
-    <Content Include="template\images\adolescent-adult-casual-207582.jpg" />
-    <Content Include="template\images\adult-asphalt-backpack-681294.jpg" />
-    <Content Include="template\images\adult-bag-buying-1068527.jpg" />
-    <Content Include="template\images\adult-beverage-cappuccino-377909.jpg" />
-    <Content Include="template\images\dreamCard.jpg" />
-    <Content Include="template\images\img_1476775091-9.jpg" />
-    <Content Include="template\images\IMG_20180316_044249_831.jpg" />
+    <Content Include="template\fonts\OFL.txt" />
+    <Content Include="template\images\BRANDS\1200px-Adidas_Logo.svg.png" />
+    <Content Include="template\images\BRANDS\BBB.png" />
+    <Content Include="template\images\BRANDS\logofFOX.png" />
+    <Content Include="template\images\BRANDS\MOES LOGO.png" />
+    <Content Include="template\images\BRANDS\Super_Pharm_Logo.svg.png" />
+    <Content Include="template\images\LIFESTYLE_PIC\adolescent-adult-casual-207582.jpg" />
+    <Content Include="template\images\LIFESTYLE_PIC\adult-asphalt-backpack-681294.jpg" />
+    <Content Include="template\images\LIFESTYLE_PIC\adult-bag-buying-1068527.jpg" />
+    <Content Include="template\images\LIFESTYLE_PIC\adult-beverage-cappuccino-377909.jpg" />
+    <Content Include="template\images\BRANDS\castro_u5857.png" />
+    <Content Include="template\images\BRANDS\dreamCard.jpg" />
+    <Content Include="template\images\BRANDS\img_1476775091-9.jpg" />
+    <Content Include="template\images\BRANDS\nike.png" />
+    <Content Include="template\images\BRANDS\ShufersalLogo.svg.png" />
     <Content Include="template\index.html" />
     <Content Include="template\schedule.html" />
     <Content Include="template\shop.html" />
@@ -443,11 +451,20 @@
     <Content Include="template\css\style.css.map" />
     <Content Include="template\css\.DS_Store" />
     <Content Include="template\css\bootstrap.css.map" />
+    <Content Include="template\fonts\Rubik-Black.ttf" />
+    <Content Include="template\fonts\Rubik-BlackItalic.ttf" />
+    <Content Include="template\fonts\Rubik-Bold.ttf" />
+    <Content Include="template\fonts\Rubik-BoldItalic.ttf" />
+    <Content Include="template\fonts\Rubik-Italic.ttf" />
+    <Content Include="template\fonts\Rubik-Light.ttf" />
+    <Content Include="template\fonts\Rubik-LightItalic.ttf" />
+    <Content Include="template\fonts\Rubik-Medium.ttf" />
+    <Content Include="template\fonts\Rubik-MediumItalic.ttf" />
+    <Content Include="template\fonts\Rubik-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="template\.sass-cache\" />
-    <Folder Include="template\fonts\" />
+    <Folder Include="template\css\.sass-cache\" />
     <Folder Include="template\js\" />
     <Folder Include="template\sass\" />
   </ItemGroup>
