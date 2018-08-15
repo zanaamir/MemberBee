@@ -367,11 +367,22 @@
     <Content Include="template\classes-single.html" />
     <Content Include="template\classes.html" />
     <Content Include="template\contact.html" />
+    <Content Include="template\css\animate.css" />
+    <Content Include="template\css\bootstrap-datepicker.css" />
+    <Content Include="template\css\bootstrap.css" />
+    <Content Include="template\css\flexslider.css" />
+    <Content Include="template\css\icomoon.css" />
+    <Content Include="template\css\magnific-popup.css" />
+    <Content Include="template\css\owl.carousel.min.css" />
+    <Content Include="template\css\owl.theme.default.min.css" />
+    <Content Include="template\css\style.css" />
     <Content Include="template\event.html" />
     <Content Include="template\images\adolescent-adult-casual-207582.jpg" />
     <Content Include="template\images\adult-asphalt-backpack-681294.jpg" />
     <Content Include="template\images\adult-bag-buying-1068527.jpg" />
     <Content Include="template\images\adult-beverage-cappuccino-377909.jpg" />
+    <Content Include="template\images\dreamCard.jpg" />
+    <Content Include="template\images\img_1476775091-9.jpg" />
     <Content Include="template\images\IMG_20180316_044249_831.jpg" />
     <Content Include="template\index.html" />
     <Content Include="template\schedule.html" />
@@ -429,11 +440,13 @@
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="template\.DS_Store" />
     <Content Include="template\prepros-6.config" />
+    <Content Include="template\css\style.css.map" />
+    <Content Include="template\css\.DS_Store" />
+    <Content Include="template\css\bootstrap.css.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="template\.sass-cache\" />
-    <Folder Include="template\css\" />
     <Folder Include="template\fonts\" />
     <Folder Include="template\js\" />
     <Folder Include="template\sass\" />
