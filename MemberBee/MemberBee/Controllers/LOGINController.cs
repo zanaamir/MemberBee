@@ -14,11 +14,11 @@ namespace MemberBee.Controllers
          
         [Route("api/LOGIN/{email}/{phone}")]
         // GET: api/Login
-        public bool Get(string email, int phone)
+        public Customer Get(string email, int phone)
         {
                igroup36_prodEntities db   = new igroup36_prodEntities();
 
-            Customer C = db.Customers.SingleOrDefault(x => x.MainMail == email);
+               Customer C = db.Customers.SingleOrDefault(x => x.MainMail == email);
 
 
 

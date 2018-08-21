@@ -28,3 +28,4 @@ C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\bin\Debug\Entity
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb
+C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache

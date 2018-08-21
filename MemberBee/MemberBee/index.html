@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
+    <script src="shaerd/masterScript.js"></script>
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -34,41 +35,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--===============================================================================================-->
     <script>
-        function chekcustomer() {
+        function login_customer() {
 
-       $("#loder").removeClass("w3-hide");
+            $("#loder").removeClass("w3-hide");
 
-      var email = $("#insert_email").val();
-      var phone = $("#insert_phone").val();
+            var email = $("#insert_email").val();
+            var phone = $("#insert_phone").val();
+            AjaxJsonHandler(systemHelper.webApiEndPoints.login+"/" + email + "/" + phone,systemHelper.HttpVerbs.POST,null ,Login_success ,GenericError  )
 
-      $.ajax({
-          datatype: "json",
-          url: "/api/LOGIN/" + email + "/" + phone,
-          contentType: "application/json; charset=utf-8",
-          method: "GET",
-          success: function (data) {
-
-              to_benefit_screen(data);
-
-          },
-          error: function (err) {
-              console.log(err)
-
-              DelayNode.alert("Wrong id or Wrong name")
-
-          }
-      });
-  }
-
-        function to_benefit_screen(status) {
-            if (status == false) {
-
-               $("#login-btn").html("<h3>try again</h3>")
-
-            }
-            else { window.open("/template/index.html", "_self") }
         }
 
+        function Login_success(res) {
+          
+           window.open("/template/index.html", "_self") 
+        }
+        function Login_error
     </script>
 </head>
 <body>

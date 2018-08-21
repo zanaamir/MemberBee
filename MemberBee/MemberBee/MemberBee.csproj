@@ -362,6 +362,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="shaerd\masterScript.js" />
     <Content Include="template\about.html" />
     <Content Include="template\blog.html" />
     <Content Include="template\classes-single.html" />
@@ -464,6 +465,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="shaerd\NewFolder1\" />
     <Folder Include="template\css\.sass-cache\" />
     <Folder Include="template\js\" />
     <Folder Include="template\sass\" />
