@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ClubService.cs" />
+    <Compile Include="BLL\CustomerService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAL\Benefit_Type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
