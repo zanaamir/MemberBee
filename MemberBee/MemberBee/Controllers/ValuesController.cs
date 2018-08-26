@@ -4,16 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ClassLibrary.DAL;
 
 namespace MemberBee.Controllers
 {
-    [Authorize]
+    
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public List<Customer> Get()
         {
-            return new string[] { "value1", "value2" };
+            igroup36_prodEntities db = new igroup36_prodEntities();
+            return db.Customers.ToList();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

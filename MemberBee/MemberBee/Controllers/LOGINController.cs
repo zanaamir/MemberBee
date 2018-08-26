@@ -12,25 +12,32 @@ namespace MemberBee.Controllers
 {
     public class LOGINController : ApiController
     {
+        CustomerService cCustomer;
+        ClubService cClub;
 
-        static igroup36_prodEntities db = new igroup36_prodEntities();
-        CustomerService cCustomer = new CustomerService(db);
-        ClubService cClub = new ClubService(db);
+       
+        public LOGINController()
+        {
+            
+            igroup36_prodEntities db = new igroup36_prodEntities();
+             cCustomer = new CustomerService(db);
+             cClub = new ClubService(db);
+        }
 
+       [HttpPost]
         [Route("api/LOGIN/{email}/{phone}")]
         // GET: api/Login
-        public Customer GET(string email, int phone)
+        public Customer login(string email, int phone)
         {
-
-            Customer C = db.Customers.SingleOrDefault(x => x.MainMail == email);
-
-            if (C != null )
+            if(cCustomer.isCustomerValid(email, phone))
             {
-                if(phone == C.PhoneNo)
-                {
-                      return C;
-                }
+                return cCustomer.GetCustomer(email);
             }
+
+           
+
+           
+           return null;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace ClassLibrary.DAL
         public igroup36_prodEntities()
             : base("name=igroup36_prodEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

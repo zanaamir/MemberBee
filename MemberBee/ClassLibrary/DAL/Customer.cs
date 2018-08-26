@@ -28,9 +28,7 @@ namespace ClassLibrary.DAL
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public Nullable<int> PhoneNo { get; set; }
         public string MainMail { get; set; }
-        public string SpamMail { get; set; }
         public int CityCityNumber { get; set; }
-        public string FamilyStatus { get; set; }
         public Nullable<int> NoOfKids { get; set; }
         public string gender { get; set; }
         public Nullable<System.DateTime> MarrigeDate { get; set; }

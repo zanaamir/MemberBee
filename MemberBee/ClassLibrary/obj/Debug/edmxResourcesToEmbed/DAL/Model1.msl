@@ -71,12 +71,12 @@
     <EntitySetMapping Name="Clubs">
       <EntityTypeMapping TypeName="igroup36_prodModel.Club">
         <MappingFragment StoreEntitySet="Club">
+          <ScalarProperty Name="URL_Internet_site" ColumnName="URL_Internet_site" />
           <ScalarProperty Name="ClubId" ColumnName="ClubId" />
           <ScalarProperty Name="ClubName" ColumnName="ClubName" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="Terms" ColumnName="Terms" />
           <ScalarProperty Name="Image_Logo" ColumnName="Image_Logo" />
-          <ScalarProperty Name="URL_Internet_site" ColumnName="URL_Internet_site" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -116,9 +116,7 @@
           <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
           <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
           <ScalarProperty Name="MainMail" ColumnName="MainMail" />
-          <ScalarProperty Name="SpamMail" ColumnName="SpamMail" />
           <ScalarProperty Name="CityCityNumber" ColumnName="CityCityNumber" />
-          <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
           <ScalarProperty Name="NoOfKids" ColumnName="NoOfKids" />
           <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="MarrigeDate" ColumnName="MarrigeDate" />

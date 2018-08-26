@@ -13,19 +13,21 @@
 }
 
 function GenericError(err){
-    console.log(err)
+    //console.log(err)
+    alert("מה פה קורה פה?")
+    
 }
 
 var systemHelper = {
     webApiEndPoints: {
-        login :"/api/login"
+        login :"/api/LOGIN"
     },
-    HttpVerbs{
+    HttpVerbs:{
         POST: "POST",
         GET : "GET",
         DELETE : "DELETE",
         PUT : "PUT",
 
-
+    
 }
 }
