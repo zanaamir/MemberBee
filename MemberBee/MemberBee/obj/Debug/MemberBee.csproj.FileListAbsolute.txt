@@ -93,3 +93,7 @@ C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\MemberBee\bin\System.Web.Http
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csprojResolveAssemblyReference.cache
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.dll
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.pdb
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csprojAssemblyReference.cache
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.csproj.CoreCompileInputs.cache
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.dll
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\MemberBee\obj\Debug\MemberBee.pdb

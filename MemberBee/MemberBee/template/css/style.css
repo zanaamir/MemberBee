@@ -945,8 +945,8 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .side {
   background: #f2f3f7;
-  padding: 2em;
-  margin-bottom: 3em; }
+  padding: 1em; /*Amit change for BrandPage grid*/
+  margin-bottom: 0.5em; } /*Amit change for BrandPage grid*/
   .side h3 {
     color: #000;
     font-size: 22px;

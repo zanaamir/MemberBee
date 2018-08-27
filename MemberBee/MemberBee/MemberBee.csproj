@@ -235,6 +235,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LOGINController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -365,7 +366,7 @@
     <Content Include="shaerd\masterScript.js" />
     <Content Include="template\about.html" />
     <Content Include="template\blog.html" />
-    <Content Include="template\classes-single.html" />
+    <Content Include="template\brandPage.html" />
     <Content Include="template\classes.html" />
     <Content Include="template\contact.html" />
     <Content Include="template\css\animate.css" />
