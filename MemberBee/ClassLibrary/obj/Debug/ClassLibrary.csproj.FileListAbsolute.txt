@@ -29,3 +29,15 @@ C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\bin\Debug\Entity
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb
 C:\Users\AMIR\Desktop\memememe\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csprojAssemblyReference.cache
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.csproj.CopyComplete
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\Amit\Desktop\MemberBee1\MemberBee\MemberBee\ClassLibrary\obj\Debug\ClassLibrary.pdb
