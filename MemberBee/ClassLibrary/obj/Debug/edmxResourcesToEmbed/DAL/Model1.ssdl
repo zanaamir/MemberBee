@@ -124,9 +124,7 @@
     <Property Name="DateOfBirth" Type="datetime" />
     <Property Name="PhoneNo" Type="int" />
     <Property Name="MainMail" Type="varchar" MaxLength="50" />
-    <Property Name="SpamMail" Type="varchar" MaxLength="50" />
     <Property Name="CityCityNumber" Type="int" Nullable="false" />
-    <Property Name="FamilyStatus" Type="varchar" MaxLength="10" />
     <Property Name="NoOfKids" Type="int" />
     <Property Name="gender" Type="varchar" MaxLength="10" />
     <Property Name="MarrigeDate" Type="datetime" />

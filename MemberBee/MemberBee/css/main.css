@@ -24,7 +24,10 @@
   font-family: Poppins-SemiBold;
   src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
 }
-
+@font-face {
+    font-family: 'Rubik-Black';
+    src: url('../template/fonts/Rubik-Black.ttf') format('truetype'), url('../template/fonts/Rubik-Bold.ttf') format('truetype'), url('../template/fonts/Rubik-BlackItalic.ttf') format('truetype'), url('../template/fonts/Rubik-Italic.ttf') format('truetype'), url('../template/fonts/Rubik-BoldItalic.ttf') format('truetype'), url('../template/fonts/Rubik-Regular.ttf') format('truetype'), url('../template/fonts/Rubik-MediumItalic.ttf') format('truetype'), url('../template/fonts/Rubik-Medium.ttf') format('truetype'), url('../template/fonts/Rubik-LightItalic.ttf') format('truetype'), url('../template/fonts/Rubik-Light.ttf') format('truetype');
+}
 
 
 
@@ -88,7 +91,9 @@ ul, li {
 	margin: 0px;
 	list-style-type: none;
 }
-
+ i{
+     font-family : 
+ }
 
 /*---------------------------------------------*/
 input {

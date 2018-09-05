@@ -13,14 +13,20 @@
 }
 
 function GenericError(err){
-    //console.log(err)
-    alert("מה פה קורה פה?")
+    console.log(err)
+   
     
+}
+function AlredyExist(err) {
+    alert("הלקוח כבר רשום למועדון זה");
 }
 
 var systemHelper = {
     webApiEndPoints: {
-        login :"/api/LOGIN"
+        login: "/api/LOGIN",
+        club: "/api/club/",
+        AddCustomerToClub: "/api/AddCustomerToClub/",
+
     },
     HttpVerbs:{
         POST: "POST",
@@ -29,5 +35,13 @@ var systemHelper = {
         PUT : "PUT",
 
     
-}
+    },
+    storege:{
+        user: "user",
+        clubId : "clubId",
+
+    },
+    getFromStorege: function (key) {
+        return JSON.parse(localStorage.getItem(key));
+    }
 }

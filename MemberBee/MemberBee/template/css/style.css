@@ -3,7 +3,14 @@
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
   src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Rubik-Black';
+    src: url('../fonts/Rubik-Black.ttf') format('truetype');
+}
 @font-face {
     font-family: 'Rubik-Regular';
     src: url('../fonts/Rubik-Regular.ttf') format('truetype');
@@ -56,6 +63,7 @@ a {
     text-decoration: none; }
 
 p {
+    font-family:Rubik-Black,Rubik-Regular;  
   margin-bottom: 20px; }
 
 #menu{
@@ -64,10 +72,12 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family:Rubik-Regular;
+  font-family:Rubik-Regular,Rubik-Black;
   font-weight: 400;
   margin: 0 0 20px 0;
-  line-height: 1.5; }
+  line-height: 1.5; 
+
+}
 
 ::-webkit-selection {
   color: #fff;
@@ -80,6 +90,7 @@ h1, h2, h3, h4, h5, h6, figure {
 ::selection {
   color: #fff;
   background: #f17445; }
+
 
 .gallery-img,
 .product-img,
@@ -454,6 +465,10 @@ h1, h2, h3, h4, h5, h6, figure {
 #colorlib-services,
 #colorlib-contact,
 #colorlib-testimony,
+.fa fa-user{
+    font-family : Rubik-Regular;
+    font-size:32px;
+}
 .colorlib-blog,
 .colorlib-gallery,
 #colorlib-subscribe {
@@ -515,7 +530,12 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #colorlib-intro {
   clear: both; }
-
+#clubCard{
+    text-align:center;
+    padding :50px;
+    font-family: Rubik-Regular;
+    font-size : 20px;
+}
 .intro-wrap {
   margin-top: -6em;
   z-index: 1; }
@@ -690,7 +710,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 40px; }
   .product-entry .product-img {
     display: block;
-    height: 300px;
+    height: 100px;
     margin-bottom: 20px;
     position: relative; }
     .product-entry .product-img .cart {
@@ -1069,7 +1089,10 @@ h1, h2, h3, h4, h5, h6, figure {
         font-weight: 300;
         font-size: 18px;
         color: #fff; }
-
+     #user     {
+    font-family : Rubik-Black;
+    font-size:32px;
+}
 .colorlib-request {
   background: #f17445; }
   .colorlib-request .request h2 {
@@ -1587,7 +1610,7 @@ input[type="text"] {
         #colorlib-offcanvas ul li.offcanvas-has-dropdown > a:after {
           position: absolute;
           right: 0px;
-          font-family: 'icomoon';
+          font-family: Rubik-Regular;
           speak: none;
           font-style: normal;
           font-weight: normal;

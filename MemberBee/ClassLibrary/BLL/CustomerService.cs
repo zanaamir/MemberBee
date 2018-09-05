@@ -43,4 +43,3 @@ namespace ClassLibrary.BLL
         }
     }
 }
-// עמית הרמן 

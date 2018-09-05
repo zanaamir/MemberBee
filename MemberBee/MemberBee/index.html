@@ -4,7 +4,7 @@
 	<title>ברוכים הבאים MEMBERBEE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="shaerd/masterScript.js"></script>
@@ -28,15 +28,16 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
     <!--ספריות מוספות שלנו -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--ספריית JQUERY-->
   
-    
-<!--===============================================================================================-->
     <script src="shaerd/masterScript.js"></script>  <!--קישור לכל פקודות הסקריפט הגנריות-->
+<!--===============================================================================================-->
+  
 
     <script>
 
@@ -53,10 +54,17 @@
         }
 
         function Login_success(customer) {
-            if (customer != null) {
-                location.href = "/template/index.html"
+            if (customer != null)
+            {
+                localStorage.setItem(systemHelper.storege.user, JSON.stringify(customer));
+                location.href = "/template/index.html";
             }
-            else alert("הפרטים שהזנת אינם נכונים")
+            
+            
+            else {
+                alert("הפרטים שהזנת אינם נכונים");
+            }
+            $("#loder").addClass("w3-hide");
         }
 
 

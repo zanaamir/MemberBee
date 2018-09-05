@@ -20,5 +20,19 @@ namespace ClassLibrary.BLL
         {
             return db.Clubs.SingleOrDefault(x => x.ClubId == _clubId);
         }
+        public List<Club> GetClubs()
+        {
+            return db.Clubs.ToList();
+        }
+
+        public Club_Customer AddCustomerToClub(Club_Customer e)
+        {
+            return db.Club_Customer.Add(e);
+        }
+
+        public void save()
+        {
+            db.SaveChanges();
+        }
     }
 }

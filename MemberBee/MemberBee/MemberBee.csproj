@@ -234,10 +234,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AddCustomerToClubController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\LOGINController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTO\AddClubDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="client\HtmlPage1.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\main.css" />
@@ -363,11 +364,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="shaerd\masterScript.js" />
-    <Content Include="template\about.html" />
-    <Content Include="template\blog.html" />
-    <Content Include="template\classes-single.html" />
-    <Content Include="template\classes.html" />
-    <Content Include="template\contact.html" />
     <Content Include="template\css\animate.css" />
     <Content Include="template\css\bootstrap-datepicker.css" />
     <Content Include="template\css\bootstrap.css" />
@@ -377,7 +373,6 @@
     <Content Include="template\css\owl.carousel.min.css" />
     <Content Include="template\css\owl.theme.default.min.css" />
     <Content Include="template\css\style.css" />
-    <Content Include="template\event.html" />
     <Content Include="template\fonts\OFL.txt" />
     <Content Include="template\images\BRANDS\1200px-Adidas_Logo.svg.png" />
     <Content Include="template\images\BRANDS\BBB.png" />
@@ -393,9 +388,33 @@
     <Content Include="template\images\BRANDS\img_1476775091-9.jpg" />
     <Content Include="template\images\BRANDS\nike.png" />
     <Content Include="template\images\BRANDS\ShufersalLogo.svg.png" />
+    <Content Include="template\images\moses\adult-blur-blurred-background-687824.jpg" />
+    <Content Include="template\images\moses\bread-burger-cheese-580612.jpg" />
+    <Content Include="template\images\moses\burger-cheeseburger-employee-1247755.jpg" />
+    <Content Include="template\images\nike\action-air-balance-345415.jpg" />
+    <Content Include="template\images\nike\action-building-city-250356.jpg" />
+    <Content Include="template\images\nike\baseball-cap-beach-blurred-background-1124465.jpg" />
+    <Content Include="template\images\shufersal\aisle-business-cart-1005638.jpg" />
+    <Content Include="template\images\shufersal\alone-background-basket-1327211.jpg" />
+    <Content Include="template\images\shufersal\bananas-fruits-grocery-4621.jpg" />
+    <Content Include="template\shufersal.html" />
+    <Content Include="template\moses.html" />
     <Content Include="template\index.html" />
-    <Content Include="template\schedule.html" />
-    <Content Include="template\shop.html" />
+    <Content Include="template\js\bootstrap-datepicker.js" />
+    <Content Include="template\js\bootstrap.min.js" />
+    <Content Include="template\js\google_map.js" />
+    <Content Include="template\js\jquery.countTo.js" />
+    <Content Include="template\js\jquery.easing.1.3.js" />
+    <Content Include="template\js\jquery.flexslider-min.js" />
+    <Content Include="template\js\jquery.magnific-popup.min.js" />
+    <Content Include="template\js\jquery.min.js" />
+    <Content Include="template\js\jquery.stellar.min.js" />
+    <Content Include="template\js\jquery.waypoints.min.js" />
+    <Content Include="template\js\magnific-popup-options.js" />
+    <Content Include="template\js\main.js" />
+    <Content Include="template\js\modernizr-2.6.2.min.js" />
+    <Content Include="template\js\owl.carousel.min.js" />
+    <Content Include="template\js\respond.min.js" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -426,7 +445,9 @@
     <Content Include="vendor\select2\select2.js" />
     <Content Include="vendor\select2\select2.min.css" />
     <Content Include="vendor\select2\select2.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -447,8 +468,6 @@
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="template\.DS_Store" />
-    <Content Include="template\prepros-6.config" />
     <Content Include="template\css\style.css.map" />
     <Content Include="template\css\.DS_Store" />
     <Content Include="template\css\bootstrap.css.map" />
@@ -462,12 +481,12 @@
     <Content Include="template\fonts\Rubik-Medium.ttf" />
     <Content Include="template\fonts\Rubik-MediumItalic.ttf" />
     <Content Include="template\fonts\Rubik-Regular.ttf" />
+    <Content Include="template\js\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="shaerd\NewFolder1\" />
     <Folder Include="template\css\.sass-cache\" />
-    <Folder Include="template\js\" />
     <Folder Include="template\sass\" />
   </ItemGroup>
   <ItemGroup>
