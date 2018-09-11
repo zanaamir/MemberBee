@@ -87,6 +87,7 @@
     <NavigationProperty Name="Club_Customer" Relationship="Self.FKClub_Custo739385" FromRole="Club" ToRole="Club_Customer" />
     <NavigationProperty Name="Club_Required_Fields" Relationship="Self.FKClub_Requi905154" FromRole="Club" ToRole="Club_Required_Fields" />
     <NavigationProperty Name="Categories" Relationship="Self.Club_Categories" FromRole="Club" ToRole="Categories" />
+    <Property Name="קרקרק" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="Club_Benefit_Type">
     <Key>

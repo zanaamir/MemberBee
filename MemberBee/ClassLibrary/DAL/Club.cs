@@ -30,6 +30,7 @@ namespace ClassLibrary.DAL
         public string Terms { get; set; }
         public string Image_Logo { get; set; }
         public string URL_Internet_site { get; set; }
+        public string קרקרק { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Brand> Brands { get; set; }

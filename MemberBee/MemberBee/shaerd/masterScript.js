@@ -25,6 +25,7 @@ var systemHelper = {
     webApiEndPoints: {
         login: "/api/LOGIN",
         club: "/api/club/",
+        customer : "/api/club",
         AddCustomerToClub: "/api/AddCustomerToClub/",
 
     },

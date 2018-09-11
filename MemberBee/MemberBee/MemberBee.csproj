@@ -237,6 +237,7 @@
     <Compile Include="Controllers\AddCustomerToClubController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\ClubController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\LOGINController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AddClubDTO.cs" />
@@ -415,6 +416,17 @@
     <Content Include="template\js\modernizr-2.6.2.min.js" />
     <Content Include="template\js\owl.carousel.min.js" />
     <Content Include="template\js\respond.min.js" />
+    <Content Include="template\web - skils\css\style.css" />
+    <Content Include="template\web - skils\images\5.jpg" />
+    <Content Include="template\web - skils\images\img1.jpg" />
+    <Content Include="template\web - skils\images\sprite.png" />
+    <Content Include="template\web - skils\images\user_male2-512.png" />
+    <Content Include="template\web - skils\ProfilePage.html" />
+    <Content Include="template\web - skils\js\bars.js" />
+    <Content Include="template\web - skils\js\easyResponsiveTabs.js" />
+    <Content Include="template\web - skils\js\jquery-1.11.1.min.js" />
+    <Content Include="template\web - skils\js\jquery.circlechart.js" />
+    <Content Include="template\web - skils\w3layouts-License.txt" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />

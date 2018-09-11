@@ -71,6 +71,7 @@
     <EntitySetMapping Name="Clubs">
       <EntityTypeMapping TypeName="igroup36_prodModel.Club">
         <MappingFragment StoreEntitySet="Club">
+          <ScalarProperty Name="קרקרק" ColumnName="קרקרק" />
           <ScalarProperty Name="URL_Internet_site" ColumnName="URL_Internet_site" />
           <ScalarProperty Name="ClubId" ColumnName="ClubId" />
           <ScalarProperty Name="ClubName" ColumnName="ClubName" />

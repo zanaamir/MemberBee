@@ -65,7 +65,9 @@ a {
 p {
     font-family:Rubik-Black,Rubik-Regular;  
   margin-bottom: 20px; }
-
+hr{
+    color:dimgray;
+}
 #menu{
     font-size:30px;
 }
@@ -467,7 +469,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #colorlib-testimony,
 .fa fa-user{
     font-family : Rubik-Regular;
-    font-size:32px;
+    font-size:22px;
 }
 .colorlib-blog,
 .colorlib-gallery,
@@ -1091,7 +1093,8 @@ h1, h2, h3, h4, h5, h6, figure {
         color: #fff; }
      #user     {
     font-family : Rubik-Black;
-    font-size:32px;
+    font-size:22px;
+    color : orange;
 }
 .colorlib-request {
   background: #f17445; }
@@ -1591,7 +1594,9 @@ input[type="text"] {
     -o-transform: translateX(0px);
     transform: translateX(0px); }
   #colorlib-offcanvas a {
-    color: rgba(255, 255, 255, 0.5); }
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Rubik-Black;
+  }
     #colorlib-offcanvas a:hover {
       color: rgba(255, 255, 255, 0.8); }
   #colorlib-offcanvas ul {
@@ -1606,7 +1611,9 @@ input[type="text"] {
         display: none; }
       #colorlib-offcanvas ul li.offcanvas-has-dropdown > a {
         display: block;
-        position: relative; }
+        position: relative;
+        font-family: Rubik-Black;
+      }
         #colorlib-offcanvas ul li.offcanvas-has-dropdown > a:after {
           position: absolute;
           right: 0px;
@@ -1914,4 +1921,6 @@ input[type="text"] {
   background: url(../images/loader.gif) center no-repeat #fff; }
 
 .js .animate-box {
-  opacity: 0; }
+  opacity: 1 ;
+  position: relative;
+  }
