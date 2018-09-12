@@ -7,13 +7,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Skills Profile Widget Flat Responsive Widget Template :: w3layouts</title>
+<title>פרופיל משתמש</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Skills Profile Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--Custom Theme files-->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <!--//Custom Theme files -->
 <!--web font-->
 <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
@@ -42,6 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         let cus = JSON.parse(localStorage.getItem("user"));
         $("#user").html("  " + cus.FirstName + " " + cus.LastName);
+        $("#email").html(cus.MainMail);
         
 
     })
@@ -49,7 +52,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     }
 
-
+    function toHomePage() {
+        location.href = "../index.html";
+        localStorage.setItem(systemHelper.storege.user, JSON.stringify(cus));
+    }
+   
    
 
 </script>
@@ -59,33 +66,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- main -->
 	<div class="main">
         <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle colorlib-nav-white"><i></i></a>
-		<h1>פרופיל אישי</h1>
+		<div dir="ltr"><img src="/images/icons/LOGO (2).png" style="width:20%" onclick="toHomePage()" /> </div>
 		<div class="main-info w3l">
 			<div class="main-row"><!-- main-row-one -->
 				<div class="profile-grid logo wthree">
 					<img src="images/user_male2-512.png" alt="">
 					<h1 id="user" ></h1>
+                    <h1 id="email" s></h1>
+                   
+
+                    <p onclick="toEditPage()" style="font-size:20px">עריכת פרטים &#9998;</p>
+                    <p onclick="toEditPage()" style="font-size:20px">המועדונים שלי &#9998;</p>
+
+
+
 					<p>לפניכם דירוג העדפות שלכם לקטגוריות השונות</p>
 					
 				</div>
 				<h3 class="title">העדפות</h3>
 					<div class="col-md-6 skills-right bar_group">
-					
-					<div class='bar_group__bar thin' label='אופנה &nbsp;&nbsp; 23%' value='23'></div>
-					<div class='bar_group__bar thin' label='מזון &nbsp;&nbsp; 100%' value='100'></div>
-					<div class='bar_group__bar thin' label='ספורט &nbsp;&nbsp; 72%' value='180'></div>
-					<div class='bar_group__bar thin' label='טיולים ושטח &nbsp;&nbsp; 88%' value='100'></div>
+					  
+                      
+					<div class='bar_group__bar thin' label='אופנה &nbsp;&nbsp; 5/10' value='100'></div>
+					<div class='bar_group__bar thin' label='מזון &nbsp;&nbsp;4/10' value='30'></div>
+					<div class='bar_group__bar thin' label='ספורט &nbsp;&nbsp; 6/10' value='30'></div>
+					<div class='bar_group__bar thin' label='טיולים ושטח &nbsp;&nbsp; 7/10' value='30'></div>
 				</div>
 				<!--bar-js-->
 				<script src="js/bars.js"></script>
-				<div class="social-icons agileits">
-						<ul>
-							<li><a href="#"></a></li>
-							<li><a href="#" class="fb"></a></li>
-							<li><a href="#" class="be"></a></li>
-							<li><a href="#" class="gg"></a></li>
-						</ul>	
-					</div>
+				
 				<div class="clear"> </div>
 			</div>	
 		</div>	

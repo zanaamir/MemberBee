@@ -145,7 +145,7 @@
         function toProfilePage() {
             let cus = JSON.parse(localStorage.getItem("user"));
             localStorage.setItem(systemHelper.storege.user, JSON.stringify(cus));
-            location.href = "/template/web - skils/ProfilePage.html";
+            location.href = "/template/profilePage/ProfilePage.html";
         }
         
 
@@ -162,48 +162,36 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2">
-                            <div id="colorlib-logo">
-                                <a href="index.html"><img src="../images/icons/LOGO (2).png" style="width:100%" /></a>
+                            <div id="colorlib-logo" dir="ltr">
+                                <a href="index.html"><img src="../images/icons/LOGO (2).png" style="width:32%" /></a>
                             </div>
                         </div>
                         <div class="col-md-10 text-right menu-1">
 
                             <ul>
                                 <li class="active" id="user">
-                                    <a href="/template/moses.html"><i class="fa fa-user-circle"></i></a>
+
                                 </li>
                                 <li class="active">
                                     <a href="index.html">בית</a>
                                 </li>
                                 <li class="has-dropdown">
                                     <a onclick="toProfilePage()">פרטים אישיים</a>
-                                    <ul class="">
-                                        <li>
-                                            <a href="/index.html">מילוי פרטים</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">תקנון משתמש</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">נתק אותי</a>
-                                        </li>
 
-                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="index.html">צור קשר</a>
+                                    <a href="contact.html">צור קשר</a>
                                 </li>
                                 <li>
-                                    <a href="index.html">הטבות ומבצעים</a>
+                                    <a href="myClub.html">המועדונים שלי</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
         </nav>
-
+   
         <aside id="colorlib-hero" class="colorlib-degree-bg">
             <div class="flexslider">
                 <ul class="slides">
