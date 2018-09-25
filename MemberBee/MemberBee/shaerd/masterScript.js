@@ -21,6 +21,7 @@ function AlredyExist(err) {
     alert("הלקוח כבר רשום למועדון זה");
 }
 
+
 var systemHelper = {
     webApiEndPoints: {
         login: "/api/LOGIN",

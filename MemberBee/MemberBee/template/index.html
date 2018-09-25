@@ -96,7 +96,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 text-center animate-box">
                     <div class="product-entry">
                     <div class ="product-img"> <img src=${Club.Image_Logo} style="height:75%" /></div>
-                     <p class ="price"><span>${Club.ClubName}</span></p>
+                     <p class ="name" id='clubName'><span>${Club.ClubName}</span></p>
                      <a href="#">לפרטים נוספים <i class ="icon-arrow-right3"></i></a>
                                 </div>
 
@@ -111,36 +111,36 @@
             return newClubCard;
         }
 
-        function toBarndPage(Club) {
+        //function toBarndPage(Club) {
 
-            switch (Club) {
-                case 10:
-                    brandPage = "/template/moses.html"
-                    break;
-                case 11:
-                    brandPage = "/template/shufersal.html"
-                    break;
-                case 12:
-                    brandPage = "/template/nike.html"
-                    break;
-                case 13:
-                    brandPage = "/template/BBB.html"
-                    break;
-                case 14:
-                    brandPage = "/template/adidas.html";
+        //    switch (Club) {
+        //        case 10:
+        //            brandPage = "/template/moses.html"
+        //            break;
+        //        case 11:
+        //            brandPage = "/template/shufersal.html"
+        //            break;
+        //        case 12:
+        //            brandPage = "/template/nike.html"
+        //            break;
+        //        case 13:
+        //            brandPage = "/template/BBB.html"
+        //            break;
+        //        case 14:
+        //            brandPage = "/template/adidas.html";
 
 
 
-            }
-            AjaxJsonHandler(systemHelper.webApiEndPoints.AddCustomerToClub + "/" + Club + "/", systemHelper.HttpVerbs.GET, null, toClubPage, GenericError);
+        //    }
+        //    AjaxJsonHandler(systemHelper.webApiEndPoints.AddCustomerToClub + "/" + Club + "/", systemHelper.HttpVerbs.GET, null, toClubPage, GenericError);
 
-            function toClubPage(_club) {
+        //    function toClubPage(_club) {
 
-                //localStorage.setItem(systemHelper.storege.user, JSON.stringify(cus));
-                localStorage.setItem("clubId", JSON.stringify(_club));
-                location.href = brandPage;
-            }
-        }
+        //        //localStorage.setItem(systemHelper.storege.user, JSON.stringify(cus));
+        //        localStorage.setItem("clubId", JSON.stringify(_club));
+        //        location.href = brandPage;
+        //    }
+        //}
 
         function toProfilePage() {
             let cus = JSON.parse(localStorage.getItem("user"));
@@ -149,6 +149,17 @@
         }
         
 
+    </script>
+    <!-- פונקציית חיפוש למועדונים -->
+    <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#clubName").filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
     </script>
 
 </head>
@@ -232,21 +243,7 @@
                             </div>
                         </div>
                     </li>
-                    <li style="background-image: url(images/LIFESTYLE_PIC/adult-beverage-cappuccino-377909.jpg);">
-                        <div class="overlay"></div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2 slider-text">
-                                    <div class="slider-text-inner text-center" id="clubsCards">
-                                        <h1>
-                                            <a href="../index.html" style="color:cornsilk">לחץ כאן לרישום</a>
-                                        </h1>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    
                 </ul>
                 <div class="mouse">
                     <a href="#" class="mouse-icon">
@@ -264,7 +261,8 @@
                         <p>באפשרותכם להצטרף למגוון מועדוני לקוחות בלחיצת כפתור </p>
                     </div>
                 </div>
-
+                <input id="myInput" type="text" placeholder="חפש מועדון..">
+                <br><br>
                 <div class="row">
                     <div class="container" id="clubCards">
                     </div>
