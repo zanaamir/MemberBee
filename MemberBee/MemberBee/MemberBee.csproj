@@ -367,6 +367,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="shaerd\masterScript.js" />
     <Content Include="signUpForm.html" />
+    <Content Include="template\brandPage.html" />
     <Content Include="template\myClub.html" />
     <Content Include="template\contact.html" />
     <Content Include="template\css\animate.css" />

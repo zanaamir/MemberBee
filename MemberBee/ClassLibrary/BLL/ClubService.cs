@@ -33,6 +33,9 @@ namespace ClassLibrary.BLL
         public void save()
         {
             db.SaveChanges();
+            // throw new NotImplementedException();
+            //***Amit*** dont know what the last line is, saw it in my code. maybe some fix suggest of Visual Studio.
+
         }
     }
 }

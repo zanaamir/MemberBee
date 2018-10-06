@@ -40,8 +40,8 @@ var systemHelper = {
     },
     storege:{
         user: "user",
-        clubId : "clubId",
-
+        club : "club",
+        // changed from clubId : "clubId"
     },
     getFromStorege: function (key) {
         return JSON.parse(localStorage.getItem(key));
