@@ -235,6 +235,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AddCustomerToClubController.cs" />
+    <Compile Include="Controllers\BenefitController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
