@@ -16,10 +16,14 @@ namespace ClassLibrary.BLL
             db = _db;
         }
 
-        public Club_Benefit_Type getBenefit(string id)
+        public List<Club_Benefit_Type> GetBenefits()
         {
+            return db.Club_Benefit_Type.ToList();
+        }
 
-            return db.Club_Benefit_Type.SingleOrDefault();
+        public void save()
+        {
+            db.SaveChanges();
         }
     }
 }
