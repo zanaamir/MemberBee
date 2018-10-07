@@ -1,6 +1,6 @@
-﻿function AjaxJsonHandler(_url , _type,_data , success_callback, error_callback) {
+﻿function AjaxJsonHandler(_url, _type, _data, success_callback, error_callback) {
 
- 
+
     $.ajax({
         datatype: "json",
         url: _url,
@@ -12,10 +12,11 @@
     });
 }
 
-function GenericError(err){
-    console.log(err)
-   
-    
+function GenericError(err) {
+    alert("fuck");
+    console.log(err);
+
+
 }
 function AlredyExist(err) {
     alert("הלקוח כבר רשום למועדון זה");
@@ -26,22 +27,24 @@ var systemHelper = {
     webApiEndPoints: {
         login: "/api/LOGIN",
         club: "/api/club/",
-        customer : "/api/club",
+        customer: "/api/club",
         AddCustomerToClub: "/api/AddCustomerToClub/",
-
+        CategoryChoice: "/api/CategoryChoice",
+        Child: "/api/Child"
     },
-    HttpVerbs:{
+    HttpVerbs: {
         POST: "POST",
-        GET : "GET",
-        DELETE : "DELETE",
-        PUT : "PUT",
+        GET: "GET",
+        DELETE: "DELETE",
+        PUT: "PUT"
 
-    
+
     },
-    storege:{
+    storege: {
         user: "user",
-        club : "club",
-        // changed from clubId : "clubId"
+        club: "club",   // changed from clubId : "clubId"
+        NewClient: "NewClient",
+        NewChild: "NewChild"
     },
     getFromStorege: function (key) {
         return JSON.parse(localStorage.getItem(key));
