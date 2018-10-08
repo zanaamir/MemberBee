@@ -41,8 +41,7 @@
                     if ($("#nxtBtn").value == "next") {
                         nextPrev(1);
                     }
-                });
-                
+                });                
 
             } 
             else if (n == (x.length - 1)) {
@@ -87,17 +86,35 @@
             // Exit the function if any field in the current tab is invalid:
             if (n == 1 && !validateForm()) return false;
             // Hide the current tab:
-            x[currentTab].style.display = "none";
-            // Increase or decrease the current tab by 1:
-            currentTab = currentTab + n;
-            // if you have reached the end of the form...
-            //if (currentTab >= x.length) {
-            //    // ... the form gets submitted:
-            //    document.getElementById("regForm").submit();
-            //    return false;
-            //}
-            // Otherwise, display the correct tab:
-            showTab(currentTab);
+            if ($("#nxtBtn").click == true) {
+                n = 1;
+                x[currentTab].style.display = "none";
+                // Increase or decrease the current tab by 1:
+                currentTab = currentTab + n;
+                // if you have reached the end of the form...
+                //if (currentTab >= x.length) {
+                //    // ... the form gets submitted:
+                //    document.getElementById("regForm").submit();
+                //    return false;
+                //}
+                // Otherwise, display the correct tab:
+                showTab(currentTab);
+            }
+            if ($("#prevBtn").click == true) {
+                x[currentTab].style.display = "none";
+                n=-1
+                // Increase or decrease the current tab by 1:
+                currentTab = currentTab + n;
+                // if you have reached the end of the form...
+                //if (currentTab >= x.length) {
+                //    // ... the form gets submitted:
+                //    document.getElementById("regForm").submit();
+                //    return false;
+                //}
+                // Otherwise, display the correct tab:
+                showTab(currentTab);
+            }
+           
         }
 
         function validateForm() {
@@ -359,7 +376,7 @@
     </script>
 </head>
 <body dir="rtl">
-
+    <!-- changeee -->
     <form action="index.html" method="post" data-mini="true" id="form" name="form" dir="rtl">
         <h1 id="header"><img id="logo" src="../images/icons/LOGO (2).png" />רישום</h1>
 

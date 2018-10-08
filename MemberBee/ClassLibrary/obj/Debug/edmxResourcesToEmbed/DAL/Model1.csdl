@@ -39,7 +39,7 @@
       <PropertyRef Name="CategoryNo" />
     </Key>
     <Property Name="CategoryNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryName" Type="Int32" />
+    <Property Name="CategoryName" Type="String" />
     <NavigationProperty Name="subCategories" Relationship="Self.FKsubCategor206567" FromRole="Categories" ToRole="subCategory" />
     <NavigationProperty Name="Clubs" Relationship="Self.Club_Categories" FromRole="Categories" ToRole="Club" />
   </EntityType>
