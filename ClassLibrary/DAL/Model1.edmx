@@ -55,6 +55,21 @@
           <Property Name="CategoryNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="CategoryChoice">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryChoiceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoryChoice_Customer">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Child">
           <Key>
             <PropertyRef Name="ChildCode" />
@@ -162,6 +177,34 @@
           <Property Name="SubCategoryName" Type="varchar" MaxLength="50" />
           <Property Name="CategoriesCategoryNo" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__CategoryC__Categ__308E3499">
+          <End Role="CategoryChoice" Type="Self.CategoryChoice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryChoice_Customer" Type="Self.CategoryChoice_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryChoice">
+              <PropertyRef Name="CategoryChoiceNo" />
+            </Principal>
+            <Dependent Role="CategoryChoice_Customer">
+              <PropertyRef Name="CategoryChoiceNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CategoryC__Custo__318258D2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryChoice_Customer" Type="Self.CategoryChoice_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdNumber" />
+            </Principal>
+            <Dependent Role="CategoryChoice_Customer">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKBranch206065">
           <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
           <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
@@ -385,6 +428,8 @@
           <EntitySet Name="Brand_Category" EntityType="Self.Brand_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryChoice" EntityType="Self.CategoryChoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryChoice_Customer" EntityType="Self.CategoryChoice_Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Child" EntityType="Self.Child" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Club" EntityType="Self.Club" Schema="dbo" store:Type="Tables" />
@@ -396,6 +441,14 @@
           <EntitySet Name="Customer_subCategory" EntityType="Self.Customer_subCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Required Fields" EntityType="Self.Required Fields" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="subCategory" EntityType="Self.subCategory" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CategoryC__Categ__308E3499" Association="Self.FK__CategoryC__Categ__308E3499">
+            <End Role="CategoryChoice" EntitySet="CategoryChoice" />
+            <End Role="CategoryChoice_Customer" EntitySet="CategoryChoice_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CategoryC__Custo__318258D2" Association="Self.FK__CategoryC__Custo__318258D2">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CategoryChoice_Customer" EntitySet="CategoryChoice_Customer" />
+          </AssociationSet>
           <AssociationSet Name="FKBranch206065" Association="Self.FKBranch206065">
             <End Role="Brand" EntitySet="Brand" />
             <End Role="Branch" EntitySet="Branch" />
@@ -615,6 +668,7 @@
           <NavigationProperty Name="City" Relationship="Self.FKCustomer121389" FromRole="Customer" ToRole="City" />
           <NavigationProperty Name="Club_Customer" Relationship="Self.FKClub_Custo856753" FromRole="Customer" ToRole="Club_Customer" />
           <NavigationProperty Name="Customer_subCategory" Relationship="Self.FKCustomer_s797966" FromRole="Customer" ToRole="Customer_subCategory" />
+          <NavigationProperty Name="CategoryChoices" Relationship="igroup36_prodModel.CategoryChoice_Customer" FromRole="Customer" ToRole="CategoryChoice" />
         </EntityType>
         <EntityType Name="Customer_subCategory">
           <Key>
@@ -902,7 +956,24 @@
             <End Role="Club" EntitySet="Clubs" />
             <End Role="Categories" EntitySet="Categories" />
           </AssociationSet>
+          <EntitySet Name="CategoryChoices" EntityType="igroup36_prodModel.CategoryChoice" />
+          <AssociationSet Name="CategoryChoice_Customer" Association="igroup36_prodModel.CategoryChoice_Customer">
+            <End Role="CategoryChoice" EntitySet="CategoryChoices" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CategoryChoice">
+          <Key>
+            <PropertyRef Name="CategoryChoiceNo" />
+          </Key>
+          <Property Name="CategoryChoiceNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryChoiceName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="igroup36_prodModel.CategoryChoice_Customer" FromRole="CategoryChoice" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CategoryChoice_Customer">
+          <End Type="igroup36_prodModel.CategoryChoice" Role="CategoryChoice" Multiplicity="*" />
+          <End Type="igroup36_prodModel.Customer" Role="Customer" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1075,6 +1146,22 @@
             </EndProperty>
             <EndProperty Name="Categories">
               <ScalarProperty Name="CategoryNo" ColumnName="CategoriesCategoryNo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CategoryChoices">
+            <EntityTypeMapping TypeName="igroup36_prodModel.CategoryChoice">
+              <MappingFragment StoreEntitySet="CategoryChoice">
+                <ScalarProperty Name="CategoryChoiceName" ColumnName="CategoryChoiceName" />
+                <ScalarProperty Name="CategoryChoiceNo" ColumnName="CategoryChoiceNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CategoryChoice_Customer" TypeName="igroup36_prodModel.CategoryChoice_Customer" StoreEntitySet="CategoryChoice_Customer">
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="IdNumber" ColumnName="CustomerID" />
+            </EndProperty>
+            <EndProperty Name="CategoryChoice">
+              <ScalarProperty Name="CategoryChoiceNo" ColumnName="CategoryChoiceNo" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

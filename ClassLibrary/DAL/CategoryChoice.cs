@@ -15,31 +15,27 @@ namespace ClassLibrary.DAL
 using System;
     using System.Collections.Generic;
     
-public partial class subCategory
+public partial class CategoryChoice
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public subCategory()
+    public CategoryChoice()
     {
 
-        this.Customer_subCategory = new HashSet<Customer_subCategory>();
+        this.Customers = new HashSet<Customer>();
 
     }
 
 
-    public int SubNo { get; set; }
+    public int CategoryChoiceNo { get; set; }
 
-    public string SubCategoryName { get; set; }
-
-    public int CategoriesCategoryNo { get; set; }
+    public string CategoryChoiceName { get; set; }
 
 
-
-    public virtual Category Category { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Customer_subCategory> Customer_subCategory { get; set; }
+    public virtual ICollection<Customer> Customers { get; set; }
 
 }
 

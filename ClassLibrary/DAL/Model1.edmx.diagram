@@ -36,6 +36,8 @@
         <AssociationConnector Association="igroup36_prodModel.FKCustomer_s126698" ManuallyRouted="false" />
         <AssociationConnector Association="igroup36_prodModel.Brand_Category" ManuallyRouted="false" />
         <AssociationConnector Association="igroup36_prodModel.Club_Categories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="igroup36_prodModel.CategoryChoice" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="igroup36_prodModel.CategoryChoice_Customer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

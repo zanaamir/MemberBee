@@ -237,9 +237,12 @@
     <Compile Include="Controllers\AddCustomerToClubController.cs" />
     <Compile Include="Controllers\BenefitController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CategoryChoiceController.cs" />
+    <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\LOGINController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AddClubDTO.cs" />
     <Compile Include="Global.asax.cs">
@@ -255,10 +258,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Client\brandPage.html" />
+    <Content Include="Client\contact.html" />
+    <Content Include="Client\index.html" />
+    <Content Include="Client\LoginPage.html" />
+    <Content Include="Client\moses.html" />
+    <Content Include="Client\myClub.html" />
+    <Content Include="Client\ProfilePage.html" />
+    <Content Include="Client\Register.html" />
+    <Content Include="Client\shufersal.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\regisStyle.css" />
     <Content Include="css\util.css" />
+    <Content Include="css\w3.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -271,7 +285,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\icons\LOGO %282%29.png" />
-    <Content Include="index.html" />
+    <Content Include="js\Jquery.js" />
     <Content Include="js\main.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -366,10 +380,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="shaerd\masterScript.js" />
-    <Content Include="signUpForm.html" />
-    <Content Include="template\brandPage.html" />
-    <Content Include="template\myClub.html" />
-    <Content Include="template\contact.html" />
     <Content Include="template\css\animate.css" />
     <Content Include="template\css\bootstrap-datepicker.css" />
     <Content Include="template\css\bootstrap.css" />
@@ -414,9 +424,6 @@
     <Content Include="template\php-contact-form-script-with-validation\vendor\FormGuide\PHPFormValidator\phpunit.xml" />
     <Content Include="template\php-contact-form-script-with-validation\vendor\gregwar\captcha\.gitignore" />
     <Content Include="template\profilePage\images\alps-background-beautiful-view-1227520.jpg" />
-    <Content Include="template\shufersal.html" />
-    <Content Include="template\moses.html" />
-    <Content Include="template\index.html" />
     <Content Include="template\js\bootstrap-datepicker.js" />
     <Content Include="template\js\bootstrap.min.js" />
     <Content Include="template\js\google_map.js" />
@@ -437,7 +444,6 @@
     <Content Include="template\profilePage\images\img1.jpg" />
     <Content Include="template\profilePage\images\sprite.png" />
     <Content Include="template\profilePage\images\user_male2-512.png" />
-    <Content Include="template\profilePage\ProfilePage.html" />
     <Content Include="template\profilePage\js\bars.js" />
     <Content Include="template\profilePage\js\easyResponsiveTabs.js" />
     <Content Include="template\profilePage\js\jquery-1.11.1.min.js" />

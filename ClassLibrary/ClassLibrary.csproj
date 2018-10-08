@@ -52,8 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BenefitService.cs" />
+    <Compile Include="BLL\CategoryChoiceService.cs" />
+    <Compile Include="BLL\ChildService.cs" />
     <Compile Include="BLL\ClubService.cs" />
     <Compile Include="BLL\CustomerService.cs" />
+    <Compile Include="BLL\Registration.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DAL\Benefit_Type.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -68,6 +71,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Category1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CategoryChoice.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Child.cs">

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\AMIR\Desktop\mem 03-09\memememe\MemberBee\MemberBee\ClassLibrary\DAL\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Adva\Desktop\MemberBee-master\MemberBee-master\MemberBee\ClassLibrary\DAL\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
