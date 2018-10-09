@@ -8,12 +8,12 @@
         method: _type,
         data: JSON.stringify(_data),
         success: success_callback,
-        error: error_callback,
+        error: error_callback
     });
 }
 
 function GenericError(err){
-    console.log(err)
+    console.log(err);
    
     
 }
@@ -26,24 +26,31 @@ var systemHelper = {
     webApiEndPoints: {
         login: "/api/LOGIN",
         club: "/api/club/",
-        customer : "/api/club",
+        customer: "/api/club",
         AddCustomerToClub: "/api/AddCustomerToClub/",
+        CategoryChoice: "/api/CategoryChoice",
+        Child: "/api/Child"
 
     },
-    HttpVerbs:{
+    HttpVerbs: {
         POST: "POST",
-        GET : "GET",
-        DELETE : "DELETE",
-        PUT : "PUT",
+        GET: "GET",
+        DELETE: "DELETE",
+        PUT: "PUT"
 
-    
+
     },
-    storege:{
+    storege: {
         user: "user",
-        club : "club",
-        // changed from clubId : "clubId"
+        club: "club", // changed from clubId : "clubId"
+        NewClient: "NewClient",
+        NewChild: "NewChild"
+
     },
     getFromStorege: function (key) {
         return JSON.parse(localStorage.getItem(key));
     }
-}
+};
+
+
+
