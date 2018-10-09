@@ -26,7 +26,7 @@ namespace MemberBee.Controllers
         {
 
             new_Child.Addchild(e);
-            new_Child.save();
+            //new_Child.save();
 
         }
     }

@@ -25,7 +25,9 @@ namespace MemberBee.Controllers
         [Route("api/CategoryChoice")]
         public List<CategoryChoice> GetChoiceCat()
         {
-            return newCategoryChoice.GetCategoryChoice();
+          
+            return newCategoryChoice.GetCategoryChoice().ToList();
+
         
         }
     }

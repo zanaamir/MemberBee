@@ -18,6 +18,7 @@ namespace ClassLibrary.BLL
 
         public Child Addchild(Child e)
         {
+            
 
             return db.Children.Add(e);
 
