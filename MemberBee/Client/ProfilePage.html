@@ -47,7 +47,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             $("#email").html(cus.MainMail);
 
 
-        })
+        });
         function showCustomer(Customer) {
 
         }
@@ -55,6 +55,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         function toHomePage() {
             location.href = "index.html";
             localStorage.setItem(systemHelper.storege.user, JSON.stringify(cus));
+        }
+
+        function toEditPage() {
+            location.replace("Register.html");
         }
 
 

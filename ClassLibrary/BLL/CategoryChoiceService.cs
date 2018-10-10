@@ -33,14 +33,14 @@ namespace ClassLibrary.BLL
 
         public List<CategoryChoice> GetCategoryChoice()
         {
-            //return db.CategoryChoices.ToList();
-            return db.CategoryChoices.Select(x => new CategoryChoice()
-            {
-                CategoryChoiceNo = x.CategoryChoiceNo,
-                CategoryChoiceName = x.CategoryChoiceName,
-                
+            return db.CategoryChoices.ToList();
+            //return db.CategoryChoices.Select(x => new CategoryChoice()
+            //{
+            //    CategoryChoiceNo = x.CategoryChoiceNo,
+            //    CategoryChoiceName = x.CategoryChoiceName,
 
-            }).ToList();
+
+            //}).ToList();
         }
 
         public void save()

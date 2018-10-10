@@ -25,7 +25,22 @@
 
 
             var currentTab = 0; // Current tab is set to be the first tab (0)
+            if (document.getElementById("question").disabled == true) {
+                document.getElementById("prevBtn").innerHTML = "cancel";
+                document.getElementById("nxtBtn").innerHTML = "update";
+                if ($("#prevBtn").click == true) {
+                    location.href = "ProfilePage.html"; //לחזור חזרה לפרופיל
+                }
+                if ($("#nxtBtn").click == true) {
+                    document.getElementById("question").disabled = false;
+                    showTab(currentTab);
+                }
+
+            }
+
             showTab(currentTab); // Display the crurrent tab
+
+
 
         });
         function showTab(n) {
@@ -77,7 +92,7 @@
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
             // Exit the function if any field in the current tab is invalid:
-            if (n == 1 && !validateForm()) return false;
+            //if (n == 1 /*&& !validateForm()*/) return false;
             // Hide the current tab:
 
             x[currentTab].className = "tab w3-hide";
@@ -94,63 +109,100 @@
             showTab(currentTab);
         }
 
-        function validateForm() {
-            // This function deals with validation of the form fields
-            var x, y, i, valid = true;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-            for (i = 0; i < y.length; i++) {
-                if (x[i] == 0) {
-                    if ($('#name').val() == "" || $('#name').length < 2) {
-                        $('#name').css("background-color", "orange");
-                    }
-                    if ($('#Lname').val() == "" || $('#Lname').length < 2) {
-                        $('#Lname').css("background-color", "orange");
-                    }
-                }
-                if (x[i] == 1) {
-                    if ($('#id_User').val().length != 9) {
-                        $('#id_User').css("background-color", "orange");
-                        alert("should be 9 digits!");
-                    }
-                    if ($('#phone').val().length != 10) {
-                        $('#phone').css("background-color", "orange");
-                        alert("should be 10 digits");
-                    }
-                    if ($('#mail').val() != "") {
-                        var m = document.forms["Form"]["user_email"].value;
-                        var atpos = m.indexOf("@");
-                        var dotpos = m.lastIndexOf(".");
-                        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= m.length) {
-                            $('#mail').css("background-color", "orange");
-                            alert("Not a valid e-mail address");
-                        }
-                    }
-                    if ($("#citym").select() != true) {
-                        alert("chose city!");
-                    }
-                }
+        //function validateForm() {
+        //    // This function deals with validation of the form fields
+        //    var x, y, i, valid = true, name, lname, phone, mail, city, id;
+        //    x = document.getElementsByClassName("tab");
+        //    y = x[currentTab].getElementsByTagName("input");
+        //    name = document.getElementById('#name');
+        //    lname = document.getElementById('#Lname');
+        //    phone = document.getElementById('#phone');
+        //    id = document.getElementById('#id_User');
+        //    mail = document.getElementById('#mail');
+        //    for (i = 0; i < x.length; i++) {
+        //        if (currentTab == 0) {
+        //            if (name == null) {
+        //                name.className += " invalid";
+        //                valid = false;
+        //            }
+        //            else if (name != null && name.length < 2) {
+        //                name.className += " invalid";
+        //                valid = false;
+        //            }
+        //        }
+        //    }
+            
+        //    // A loop that checks every input field in the current tab:
+        //    //for (i = 0; i < y.length; i++) {
+        //    ////if (x == 0) {
+        //    //    if (y[i].value == "" || y[i].value.length < 2) {
+        //    //        y[i].className += " invalid";
+        //    //        valid = false;
+        //    //    }
+        //    //        //if ($('#name').val() == "" || $('#name').length < 2) {
+        //    //        //    $('#name').className += " invalid";
+        //    //        //    valid = false;
+        //    //        //}
+        //    //        //if ($('#Lname').val() == "" || $('#Lname').length < 2) {
+        //    //        //    $('#Lname').className += " invalid";
+        //    //        //    valid = false;
+        //    //        //}
+        //    //    //}
+        //    //    if (x == 1) {
+        //    //        if (y[i].value == "" || y[i].value.length != 9) {
+        //    //            y[i].className += " invalid";
+        //    //            valid = false;
+        //    //        }
+        //    //        if ($('#phone').val().length != 10) {
+        //    //            $('#phone').className += " invalid";
+        //    //            alert("should be 10 digits");
+        //    //            valid = false;
+        //    //        }
+        //            //if ($('#id_User').val().length != 9) {
+        //            //    $('#id_User').className += " invalid";
+        //            //    alert("should be 9 digits!");
+        //            //    valid = false;
+        //            //}
+        //            //if ($('#phone').val().length != 10) {
+        //            //    $('#phone').className += " invalid";
+        //            //    alert("should be 10 digits");
+        //            //    valid = false;
+        //            //}
+        //            //if ($('#mail').val() != "") {
+        //            //    var m = document.forms["Form"]["user_email"].value;
+        //            //    var atpos = m.indexOf("@");
+        //            //    var dotpos = m.lastIndexOf(".");
+        //            //    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= m.length) {
+        //            //        $('#mail').className += " invalid";
+        //            //        alert("Not a valid e-mail address");
+        //            //        valid = false;
+        //            //    }
+        //            //}
+        //            //if ($("#citym").select() != true) {
+        //            //    alert("chose city!");
+        //            //    valid = false;
+        //            //}
+        //        //}
 
 
 
 
 
 
-                // If a field is empty...
-                if (y[i].value == "") {
-                    // add an "invalid" class to the field:
-                    y[i].className += " invalid";
-                    // and set the current valid status to false
-                    valid = false;
-                }
-            }
-            // If the valid status is true, mark the step as finished and valid:
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-            }
-            return valid; // return the valid status
-        }
+        //        // If a field is empty...
+        //        //if (y[i].value == "") {
+        //        //    // add an "invalid" class to the field:
+        //        //    y[i].className += " invalid";
+        //        //    // and set the current valid status to false
+        //        //    valid = false;
+        //        //}
+        //    //}
+        //    // If the valid status is true, mark the step as finished and valid:
+        //    if (valid) {
+        //        document.getElementsByClassName("step")[currentTab].className += " finish";
+        //    }
+        //    return valid; // return the valid status
+        //}
 
         function fixStepIndicator(n) {
             // This function removes the "active" class of all steps...
@@ -175,38 +227,14 @@
         function SaveToDB() {
 
             //location.reload();
-
-            if ($('#id_User').val().length != 9) {
-                $('#id_User').css("background-color", "orange");
-                alert("should be 9 digits!");
-            }
-            if ($('#phone').val().length != 10) {
-                $('#phone').css("background-color", "orange");
-                alert("should be 10 digits");
-            }
-            if ($('#mail').val() != "") {
-                var x = document.forms["Form"]["user_email"].value;
-                var atpos = x.indexOf("@");
-                var dotpos = x.lastIndexOf(".");
-                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-                    $('#mail').css("background-color", "orange");
-                    alert("Not a valid e-mail address");
-                }
-            }
-
-
-
-
-            else {
+            
                 if ($("#male").select == true) {
                     var x = "male";
                 }
                 if ($("#female").select == true) {
-                    var x = "female";
+                     x = "female";
                 }
-
-            }
-
+           
             var NewClient = {
                 FirstName: $('#name').val(),
                 LastName: $("#Lname").val(),
@@ -232,6 +260,8 @@
 
                     alert(" ברוך הבא " + $('#name').val());
                     localStorage.setItem(systemHelper.storege.user, JSON.stringify(NewClient));
+                    document.getElementById("question").disabled = true;
+                    //$("#question").addClass("disabled");
                     location.href = "index.html";
 
                 },
@@ -351,7 +381,7 @@
 
         function showCategory(category) {
             for (let i in category) {
-
+                alert("gg");
                 $("#categoryChice").append(BringCategory(category[i]));
 
             }
@@ -360,8 +390,8 @@
         function BringCategory(category) {
             var inCategory = `
                             <div class="grid-item" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
-                                <label for="${category.CategoryChoiceNo}">${category.CategoryChoiceName}</label>
-                                  <input type="checkbox" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceNo}" data-mini="true">
+                                <label for="${category.CategoryChoiceName}">${category.CategoryChoiceName}</label>
+                                  <input type="checkbox" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true">
                                         </div>
                                         `;
 
@@ -383,7 +413,7 @@
                 <label for="user_name">שם:</label>
                 <input class="inp" type="text" id="name" name="user_name" placeholder="שם" required /> <!--onblur="OnBLUR(this.value)"-->
 
-                <input class="inp" type="text" id="Lname" name="user_Lname" placeholder="שם משפחה" required /> <!--onblur="OnBLUR(this.value)"-->
+                <input class="inp" type="text" id="Lname" name="user_name" placeholder="שם משפחה" required /> <!--onblur="OnBLUR(this.value)"-->
 
 
 
