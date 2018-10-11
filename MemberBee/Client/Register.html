@@ -36,12 +36,8 @@
                     document.getElementById("question").disabled = false;
                     showTab(currentTab);
                 }
-
             }
-
             showTab(currentTab); // Display the crurrent tab
-
-
 
         });
         function showTab(n) {
@@ -57,14 +53,7 @@
                 document.getElementById("prevBtn").innerHTML = "cancel";
                 if ($("#prevBtn").click == true) {
                     GoToLog();
-                }
-
-                //$("#nxtBtn").click(function () {
-                //    if ($("#nxtBtn").value == "next") {
-                //        nextPrev(1);
-                //    }
-                //});
-
+                }              
             }
             else if (n == (x.length - 1)) {
                 document.getElementById("nxtBtn").innerHTML = "save";
@@ -73,13 +62,6 @@
                 if ($("#nxtBtn").click == true) {
                     SaveToDB();
                 }
-
-                //$("#prevBtn").click(function () {
-                //    if ($("#prevBtn").value == "previous") {
-                //        nextPrev(-1);
-                //    }
-                //});
-
 
             } else {
                 document.getElementById("nxtBtn").innerHTML = "next";
@@ -97,7 +79,7 @@
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
             // Exit the function if any field in the current tab is invalid:
-            //if (n == 1 /*&& !validateForm()*/) return false;
+            if (n == 1 && !validateForm()) return false;
             // Hide the current tab:
 
             //x[currentTab].className = "tab w3-hide";
@@ -122,100 +104,106 @@
             //showTab(currentTab);
         }
 
-        //function validateForm() {
-        //    // This function deals with validation of the form fields
-        //    var x, y, i, valid = true, name, lname, phone, mail, city, id;
-        //    x = document.getElementsByClassName("tab");
-        //    y = x[currentTab].getElementsByTagName("input");
-        //    name = document.getElementById('#name');
-        //    lname = document.getElementById('#Lname');
-        //    phone = document.getElementById('#phone');
-        //    id = document.getElementById('#id_User');
-        //    mail = document.getElementById('#mail');
-        //    for (i = 0; i < x.length; i++) {
-        //        if (currentTab == 0) {
-        //            if (name == null) {
-        //                name.className += " invalid";
-        //                valid = false;
-        //            }
-        //            else if (name != null && name.length < 2) {
-        //                name.className += " invalid";
-        //                valid = false;
-        //            }
-        //        }
-        //    }
+        function validateForm() {
+            // This function deals with validation of the form fields
+            let x, y, i, valid = true, name="", lname, phone, mail, city, id;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab];
+            name =$("#name").val();
+            lname = document.getElementById('#Lname');
+            phone = document.getElementById('#phone');
+            id = document.getElementById('#id_User');
+            mail = document.getElementById('#mail');
+            for (i = 0; i < y.length; i++) {
+                if (name == "" || name.length < 2) {
+                    name.className += " invalid";
+                    valid = false;
+                }
+            }
+            //for (i = 0; i < x.length; i++) {
+            //    if (currentTab == 0) {
+            //        if (name == null) {
+            //            name.className += " invalid";
+            //            valid = false;
+            //        }
+            //        else if (name != null && name.length < 2) {
+            //            name.className += " invalid";
+            //            valid = false;
+            //        }
+            //    }
+            //}
 
-        //    // A loop that checks every input field in the current tab:
-        //    //for (i = 0; i < y.length; i++) {
-        //    ////if (x == 0) {
-        //    //    if (y[i].value == "" || y[i].value.length < 2) {
-        //    //        y[i].className += " invalid";
-        //    //        valid = false;
-        //    //    }
-        //    //        //if ($('#name').val() == "" || $('#name').length < 2) {
-        //    //        //    $('#name').className += " invalid";
-        //    //        //    valid = false;
-        //    //        //}
-        //    //        //if ($('#Lname').val() == "" || $('#Lname').length < 2) {
-        //    //        //    $('#Lname').className += " invalid";
-        //    //        //    valid = false;
-        //    //        //}
-        //    //    //}
-        //    //    if (x == 1) {
-        //    //        if (y[i].value == "" || y[i].value.length != 9) {
-        //    //            y[i].className += " invalid";
-        //    //            valid = false;
-        //    //        }
-        //    //        if ($('#phone').val().length != 10) {
-        //    //            $('#phone').className += " invalid";
-        //    //            alert("should be 10 digits");
-        //    //            valid = false;
-        //    //        }
-        //            //if ($('#id_User').val().length != 9) {
-        //            //    $('#id_User').className += " invalid";
-        //            //    alert("should be 9 digits!");
-        //            //    valid = false;
-        //            //}
-        //            //if ($('#phone').val().length != 10) {
-        //            //    $('#phone').className += " invalid";
-        //            //    alert("should be 10 digits");
-        //            //    valid = false;
-        //            //}
-        //            //if ($('#mail').val() != "") {
-        //            //    var m = document.forms["Form"]["user_email"].value;
-        //            //    var atpos = m.indexOf("@");
-        //            //    var dotpos = m.lastIndexOf(".");
-        //            //    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= m.length) {
-        //            //        $('#mail').className += " invalid";
-        //            //        alert("Not a valid e-mail address");
-        //            //        valid = false;
-        //            //    }
-        //            //}
-        //            //if ($("#citym").select() != true) {
-        //            //    alert("chose city!");
-        //            //    valid = false;
-        //            //}
-        //        //}
+            // A loop that checks every input field in the current tab:
+            //for (i = 0; i < y.length; i++) {
+            ////if (x == 0) {
+            //    if (y[i].value == "" || y[i].value.length < 2) {
+            //        y[i].className += " invalid";
+            //        valid = false;
+            //    }
+            //        //if ($('#name').val() == "" || $('#name').length < 2) {
+            //        //    $('#name').className += " invalid";
+            //        //    valid = false;
+            //        //}
+            //        //if ($('#Lname').val() == "" || $('#Lname').length < 2) {
+            //        //    $('#Lname').className += " invalid";
+            //        //    valid = false;
+            //        //}
+            //    //}
+            //    if (x == 1) {
+            //        if (y[i].value == "" || y[i].value.length != 9) {
+            //            y[i].className += " invalid";
+            //            valid = false;
+            //        }
+            //        if ($('#phone').val().length != 10) {
+            //            $('#phone').className += " invalid";
+            //            alert("should be 10 digits");
+            //            valid = false;
+            //        }
+                    //if ($('#id_User').val().length != 9) {
+                    //    $('#id_User').className += " invalid";
+                    //    alert("should be 9 digits!");
+                    //    valid = false;
+                    //}
+                    //if ($('#phone').val().length != 10) {
+                    //    $('#phone').className += " invalid";
+                    //    alert("should be 10 digits");
+                    //    valid = false;
+                    //}
+                    //if ($('#mail').val() != "") {
+                    //    var m = document.forms["Form"]["user_email"].value;
+                    //    var atpos = m.indexOf("@");
+                    //    var dotpos = m.lastIndexOf(".");
+                    //    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= m.length) {
+                    //        $('#mail').className += " invalid";
+                    //        alert("Not a valid e-mail address");
+                    //        valid = false;
+                    //    }
+                    //}
+                    //if ($("#citym").select() != true) {
+                    //    alert("chose city!");
+                    //    valid = false;
+                    //}
+                //}
 
 
 
 
 
 
-        //        // If a field is empty...
-        //        //if (y[i].value == "") {
-        //        //    // add an "invalid" class to the field:
-        //        //    y[i].className += " invalid";
-        //        //    // and set the current valid status to false
-        //        //    valid = false;
-        //        //}
-        //    //}
-        //    // If the valid status is true, mark the step as finished and valid:
-        //    if (valid) {
-        //        document.getElementsByClassName("step")[currentTab].className += " finish";
-        //    }
-        //    return valid; // return the valid status
-        //}
+                // If a field is empty...
+                //if (y[i].value == "") {
+                //    // add an "invalid" class to the field:
+                //    y[i].className += " invalid";
+                //    // and set the current valid status to false
+                //    valid = false;
+                //}
+            //}
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
 
         function fixStepIndicator(n) {
             // This function removes the "active" class of all steps...
