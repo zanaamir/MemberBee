@@ -25,6 +25,7 @@
 
 
             var currentTab = 0; // Current tab is set to be the first tab (0)
+            //אם חזרנו לרישום דרך דף הפרופיל
             if (document.getElementById("question").disabled == true) {
                 document.getElementById("prevBtn").innerHTML = "cancel";
                 document.getElementById("nxtBtn").innerHTML = "update";
@@ -46,9 +47,11 @@
         function showTab(n) {
             // This function will display the specified tab of the form...
             let x = document.getElementsByClassName("tab");
-            x[n].className += " w3-show";
-
-            //x[n].style.display = "block";
+            //x[n].className += " w3-show";
+            alert(x[n]);
+            //x[n].className = "tab w3-show";
+            
+            x[n].style.display = "block";
             //... and fix the Previous/Next buttons:
             if (n == 0) {
                 document.getElementById("prevBtn").innerHTML = "cancel";
@@ -66,6 +69,7 @@
             else if (n == (x.length - 1)) {
                 document.getElementById("nxtBtn").innerHTML = "save";
                 //onclick($("#nxtBtn")): SaveToDB();
+                openCategory();
                 if ($("#nxtBtn").click == true) {
                     SaveToDB();
                 }
@@ -96,18 +100,26 @@
             //if (n == 1 /*&& !validateForm()*/) return false;
             // Hide the current tab:
 
-            x[currentTab].className = "tab w3-hide";
-            //x[currentTab].style.display = "none";
+            //x[currentTab].className = "tab w3-hide";
+            x[currentTab].style.display = "none";
             // Increase or decrease the current tab by 1:
-            currentTab = currentTab + n;
+            //currentTab = currentTab + n;
             // if you have reached the end of the form...
-            //if (currentTab >= x.length) {
-            //    // ... the form gets submitted:
-            //    document.getElementById("regForm").submit();
-            //    return false;
-            //}
+            if (currentTab >= (x.length-1)) {
+                // ... the form gets submitted:
+                $("#nxtBtn").click(function () {
+                    alert("ok");
+                    SaveToDB();
+                });
+
+            }
+            else {
+                //x[currentTab].className = "tab w3-hide";
+                currentTab = currentTab + n;
+                showTab(currentTab);
+            }
             // Otherwise, display the correct tab:
-            showTab(currentTab);
+            //showTab(currentTab);
         }
 
         //function validateForm() {
@@ -279,36 +291,7 @@
 
         // step 1
 
-        //$(".tab").load(function () {
-
-        //});
-
-
-        //function OnBLUR(val) {
-        //    if ($(this.value) == "" || $(this).length < 2) {
-        //        $(this).css("background-color", "orange");
-        //    }
-        //    else
-        //        $(this).css("background-color", "#ffe9bb");
-        //}
-
-
-        //$('#name').blur(function () {
-        //    if ($('#name').val() == "" || $('#name').length < 2) {
-        //        $('#name').css("background-color", "orange");
-        //    }
-        //});
-
-
-
-        //function validateStep1()
-        //{
-        //    if (($('#name').val() == "") || $('#name').length<2) {
-        //        $('#name').blur("background-color", "orange");
-
-
-        //    }
-        //}
+        
 
 
         //step 2
@@ -337,7 +320,7 @@
         //משהו לא מסתדר בפונקציה הזאת כוסעמק
 
         function childDetails(val) {
-            var day, month, year;
+            var day="", month="", year="";
             alert(val);
             if (val == 0) {
                 alert("never to late to make some");
@@ -345,26 +328,30 @@
             else {
                 for (var i = 1; i <= val; i++) { //לבדוק הגבלה אחרת
 
-                    var childName = `<label for="childName">שם</label><input type="text" id="[i]" name="childName" data-mini="true">`;
+                    var childName = `<label for="childName">שם</label><input type="text" id="${i}" name="childName" data-mini="true">`;
                     var childDate = `
-                                  <label for= "controlgroup" >: תאריך לידה</label >
+                                  <label for= "controlgroup" >: תאריך לידה</label>
                         <div data-role="controlgroup" data-type="horizontal" data-mini="true" id="dateofchild">
-                                    <select id = "Childday" ></select><select id="Childmonth"></select><select id="Childyear"></select></div >`;
+                                    <div class="float">
+                              <select id = "Childday"></select></div>
+                              <div class="float"><select id="Childmonth"></select></div>
+                             <div class="float"><select id="Childyear"></select></div></div>`;
                     for (var d = 1; d < 32; d++) {
-                         day += '<option>"[d]"</option>';
+                        day += '<option>'+d+'</option>';
+                        
                     }
                     for (var m = 1; m < 13; m++) {
-                         month += '<option>"[m]"</option>';
+                        month += '<option>' + m +'</option>';
                     }
                     for (var y = 1990; y < 2019; y++) {
-                         year += '<option>"[y]"</option>';
+                        year += '<option>' + y +'</option>';
                     }
                          
-                    alert(childName);
+                    alert(childName[i]);
                     $("#childDet").append(childName);
-                    $(Childday).append(day);
-                    $(Childmonth).append(month);
-                    $(Childyear).append(year);
+                    $("#Childday").append(day);
+                    $("#Childmonth").append(month);
+                    $("#Childyear").append(year);
                     $("#childDet").append(childDate);
 
 
@@ -373,15 +360,16 @@
 
             }
 
-            //for (var x = 1; x <= i; x++) {
-            //    var NewChild = {
-            //        FirstName: $([x]).val(),
-            //        DateOfBirth: $('#dateBirth').val(),
-            //        CustomerIdNumber: $("#id_User").val()
-            //    };
-            //    localStorage.setItem(systemHelper.storege.NewChild, JSON.stringify(NewChild[x]));
-            //    AjaxJsonHandler(systemHelper.webApiEndPoints.Child, systemHelper.HttpVerbs.POST, systemHelper.storege.NewChild[x], childrenyes(), GenericError);
-            //}
+            for (var x = 1; x <= val; x++) {
+                var NewChild = {
+                    firstName: $("i").val(),
+                    DateOfBirth: $('#dateBirth').val(),
+                    CustomerIdNumber: $("#id_User").val()
+                };
+                alert(NewChild);
+                //localStorage.setItem(systemHelper.storege.NewChild, JSON.stringify(NewChild[x]));
+                //AjaxJsonHandler(systemHelper.webApiEndPoints.Child, systemHelper.HttpVerbs.POST, systemHelper.storege.NewChild[x], childrenyes(), GenericError);
+            }
 
 
 
@@ -389,7 +377,7 @@
 
         function childrenyes() {
 
-            alert($([x]).val());
+            alert($(x).val());
         }
 
         //function ClientMarrigeDate() { להעתיק לטופס את התאריך הנבחר פלוס יצירת כפתור ערוך שינויים
@@ -416,10 +404,10 @@
 
         function BringCategory(category) {
             var inCategory = `
-                                <div class="grid-item" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
-                                    <label for="${category.CategoryChoiceName}">${category.CategoryChoiceName}</label>
-                                      <input type="checkbox" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true">
-                                            </div>
+                                <div class="list" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
+                                    <p>${category.CategoryChoiceName}
+                                      <input type="range" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true" value="50" min="0" max="100" data-show-value="true">
+                                          </p></div></br>
                                             `;
 
             return inCategory;
@@ -640,7 +628,7 @@
                 </div>
                 <div class="w3-tiny">
                     <label for="ChildNo">מס' ילדים:</label>
-                    <select onchange="childDetails(this.value)" id="ChildNo">
+                    <select onchange="childDetails(this.value)" id="childNo">
                         <option selected disabled>ילדים?</option>
                         <option value="0">איו לי ילדים</option>
                         <option value="1">1</option>
@@ -653,77 +641,15 @@
                 </div>
                 <div id="childDet"></div>
 
-                <label for="controlgroup">תאריך לידה</label>
-                <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-                    <select id="day">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                        <option>24</option>
-                        <option>25</option>
-                        <option>26</option>
-                        <option>27</option>
-                        <option>28</option>
-                        <option>29</option>
-                        <option>30</option>
-                        <option>31</option>
-                    </select>
-                    <select id="month">
-                        <option>ינואר</option>
-                        <option>פברואר</option>
-                        <option>מרץ</option>
-                        <option>אפריל</option>
-                        <option>מאי</option>
-                        <option>יוני</option>
-                        <option>יולי</option>
-                        <option>אוגוסט</option>
-                        <option>ספטמבר</option>
-                        <option>אוקטובר</option>
-                        <option>נובמבר</option>
-                        <option>דצמבר</option>
-                    </select>
-                    <select id="year">
-                        <option>1990</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-                        <option>1991</option>
-
-                    </select>
-
-                </div>
+                
             </div>
 
             <div class="tab">
                 <h1><span class="number">4</span>Step </h1>
 
-                <div class="w3-button" onclick="openCategory()">
+                <div>
                     <span class="fa fa-arrow-down">תחומי עניין</span>
-                    <div class="grid-container" id="categoryChice"></div>
+                    <div id="categoryChice"></div>
 
 
 

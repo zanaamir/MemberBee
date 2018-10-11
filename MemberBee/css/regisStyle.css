@@ -344,3 +344,7 @@ button {
     .step.finish {
         background-color: #4CAF50;
     }
+
+    div.float{
+        float:left;
+    }
