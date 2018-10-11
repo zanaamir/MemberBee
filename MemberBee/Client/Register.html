@@ -114,11 +114,13 @@
             phone = document.getElementById('#phone');
             id = document.getElementById('#id_User');
             mail = document.getElementById('#mail');
-            for (i = 0; i < y.length; i++) {
+            if (x[currentTab] == x[0]) {
                 if (name == "" || name.length < 2) {
+                    alert("should be 10 digits");
                     name.className += " invalid";
                     valid = false;
                 }
+                
             }
             //for (i = 0; i < x.length; i++) {
             //    if (currentTab == 0) {
