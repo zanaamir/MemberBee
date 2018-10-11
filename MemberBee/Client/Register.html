@@ -65,6 +65,7 @@
             }
             else if (n == (x.length - 1)) {
                 document.getElementById("nxtBtn").innerHTML = "save";
+                //onclick($("#nxtBtn")): SaveToDB();
                 if ($("#nxtBtn").click == true) {
                     SaveToDB();
                 }
@@ -131,7 +132,7 @@
         //            }
         //        }
         //    }
-            
+
         //    // A loop that checks every input field in the current tab:
         //    //for (i = 0; i < y.length; i++) {
         //    ////if (x == 0) {
@@ -227,14 +228,14 @@
         function SaveToDB() {
 
             //location.reload();
-            
-                if ($("#male").select == true) {
-                    var x = "male";
-                }
-                if ($("#female").select == true) {
-                     x = "female";
-                }
-           
+
+            if ($("#male").select == true) {
+                var x = "male";
+            }
+            if ($("#female").select == true) {
+                x = "female";
+            }
+
             var NewClient = {
                 FirstName: $('#name').val(),
                 LastName: $("#Lname").val(),
@@ -336,20 +337,45 @@
         //משהו לא מסתדר בפונקציה הזאת כוסעמק
 
         function childDetails(val) {
+            var day, month, year;
+            alert(val);
+            if (val == 0) {
+                alert("never to late to make some");
+            }
+            else {
+                for (var i = 1; i <= val; i++) { //לבדוק הגבלה אחרת
 
-            for (var i = 1; i <= val; i++) { //לבדוק הגבלה אחרת
-                if (i <= val) {
-                    var childInfo = '<label for="childName">שם</label><input type="text" id=[i] name="childName" data-mini="true"><label for="childage">:תאריך לידה</label>';
-                    $("#childDet").append(childInfo, controlgroup);
-                    
+                    var childName = `<label for="childName">שם</label><input type="text" id="[i]" name="childName" data-mini="true">`;
+                    var childDate = `
+                                  <label for= "controlgroup" >: תאריך לידה</label >
+                        <div data-role="controlgroup" data-type="horizontal" data-mini="true" id="dateofchild">
+                                    <select id = "Childday" ></select><select id="Childmonth"></select><select id="Childyear"></select></div >`;
+                    for (var d = 1; d < 32; d++) {
+                         day += '<option>"[d]"</option>';
+                    }
+                    for (var m = 1; m < 13; m++) {
+                         month += '<option>"[m]"</option>';
+                    }
+                    for (var y = 1990; y < 2019; y++) {
+                         year += '<option>"[y]"</option>';
+                    }
+                         
+                    alert(childName);
+                    $("#childDet").append(childName);
+                    $(Childday).append(day);
+                    $(Childmonth).append(month);
+                    $(Childyear).append(year);
+                    $("#childDet").append(childDate);
+
 
                 }
-               
+
 
             }
+
             //for (var x = 1; x <= i; x++) {
             //    var NewChild = {
-            //        FirstName: $('#name').val(),
+            //        FirstName: $([x]).val(),
             //        DateOfBirth: $('#dateBirth').val(),
             //        CustomerIdNumber: $("#id_User").val()
             //    };
@@ -362,7 +388,8 @@
         }
 
         function childrenyes() {
-            alert("ok");
+
+            alert($([x]).val());
         }
 
         //function ClientMarrigeDate() { להעתיק לטופס את התאריך הנבחר פלוס יצירת כפתור ערוך שינויים
@@ -381,7 +408,7 @@
 
         function showCategory(category) {
             for (let i in category) {
-                alert("gg");
+
                 $("#categoryChice").append(BringCategory(category[i]));
 
             }
@@ -389,11 +416,11 @@
 
         function BringCategory(category) {
             var inCategory = `
-                            <div class="grid-item" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
-                                <label for="${category.CategoryChoiceName}">${category.CategoryChoiceName}</label>
-                                  <input type="checkbox" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true">
-                                        </div>
-                                        `;
+                                <div class="grid-item" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
+                                    <label for="${category.CategoryChoiceName}">${category.CategoryChoiceName}</label>
+                                      <input type="checkbox" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true">
+                                            </div>
+                                            `;
 
             return inCategory;
         }
@@ -613,7 +640,8 @@
                 </div>
                 <div class="w3-tiny">
                     <label for="ChildNo">מס' ילדים:</label>
-                    <select onclick="childDetails(this.value)" id="ChildNo">
+                    <select onchange="childDetails(this.value)" id="ChildNo">
+                        <option selected disabled>ילדים?</option>
                         <option value="0">איו לי ילדים</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
