@@ -237,12 +237,12 @@
     <Compile Include="Controllers\AddCustomerToClubController.cs" />
     <Compile Include="Controllers\BenefitController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
-    <Compile Include="Controllers\CategoryChoiceController.cs" />
     <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\LOGINController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AddClubDTO.cs" />
     <Compile Include="Global.asax.cs">

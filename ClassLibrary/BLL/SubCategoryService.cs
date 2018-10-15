@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary.DAL;
 
-
 namespace ClassLibrary.BLL
 {
-    public class CategoryChoiceService
+    public class SubCategoryService
     {
         private igroup36_prodEntities db; // מביא לי את הדטה
 
-        public CategoryChoiceService(igroup36_prodEntities _db)
+        public SubCategoryService(igroup36_prodEntities _db)
         {
             db = _db;
         }
@@ -24,16 +23,16 @@ namespace ClassLibrary.BLL
 
         //}
 
-        public CategoryChoice AddCategoryChoice(CategoryChoice e)
+        public subCategory AddSubCategory(subCategory e)
         {
 
-            return db.CategoryChoices.Add(e);
+            return db.subCategories.Add(e);
 
         }
 
-        public List<CategoryChoice> GetCategoryChoice()
+        public List<subCategory> GetSubCategory()
         {
-            return db.CategoryChoices.ToList();
+            return db.subCategories.ToList();
             //return db.CategoryChoices.Select(x => new CategoryChoice()
             //{
             //    CategoryChoiceNo = x.CategoryChoiceNo,
@@ -49,3 +48,4 @@ namespace ClassLibrary.BLL
         }
     }
 }
+

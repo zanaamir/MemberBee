@@ -10,6 +10,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <!--<link rel="stylesheet" href="css/normalize.css">-->
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="../js/Jquery.js"></script>
     <script src="../shaerd/masterScript.js"></script>
@@ -39,21 +40,24 @@
             }
             showTab(currentTab); // Display the crurrent tab
 
+            //$(".blur").blur(function () {
+            //    validateForm(this);
+            //});
         });
         function showTab(n) {
             // This function will display the specified tab of the form...
             let x = document.getElementsByClassName("tab");
             //x[n].className += " w3-show";
-            alert(x[n]);
-            //x[n].className = "tab w3-show";
             
+            //x[n].className = "tab w3-show";
+
             x[n].style.display = "block";
             //... and fix the Previous/Next buttons:
             if (n == 0) {
                 document.getElementById("prevBtn").innerHTML = "cancel";
                 if ($("#prevBtn").click == true) {
                     GoToLog();
-                }              
+                }
             }
             else if (n == (x.length - 1)) {
                 document.getElementById("nxtBtn").innerHTML = "save";
@@ -79,7 +83,7 @@
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
             // Exit the function if any field in the current tab is invalid:
-            if (n == 1 && !validateForm()) return false;
+            //if (n == 1/* && !validateForm()*/) return false;
             // Hide the current tab:
 
             //x[currentTab].className = "tab w3-hide";
@@ -87,7 +91,7 @@
             // Increase or decrease the current tab by 1:
             //currentTab = currentTab + n;
             // if you have reached the end of the form...
-            if (currentTab >= (x.length-1)) {
+            if (currentTab >= (x.length - 1)) {
                 // ... the form gets submitted:
                 $("#nxtBtn").click(function () {
                     alert("ok");
@@ -104,108 +108,80 @@
             //showTab(currentTab);
         }
 
-        function validateForm() {
-            // This function deals with validation of the form fields
-            let x, y, i, valid = true, name="", lname, phone, mail, city, id;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab];
-            name =$("#name").val();
-            lname = document.getElementById('#Lname');
-            phone = document.getElementById('#phone');
-            id = document.getElementById('#id_User');
-            mail = document.getElementById('#mail');
-            if (x[currentTab] == x[0]) {
-                if (name == "" || name.length < 2) {
-                    alert("should be 10 digits");
-                    name.className += " invalid";
-                    valid = false;
-                }
-                
-            }
-            //for (i = 0; i < x.length; i++) {
-            //    if (currentTab == 0) {
-            //        if (name == null) {
-            //            name.className += " invalid";
-            //            valid = false;
-            //        }
-            //        else if (name != null && name.length < 2) {
-            //            name.className += " invalid";
-            //            valid = false;
-            //        }
-            //    }
-            //}
-
-            // A loop that checks every input field in the current tab:
-            //for (i = 0; i < y.length; i++) {
-            ////if (x == 0) {
-            //    if (y[i].value == "" || y[i].value.length < 2) {
-            //        y[i].className += " invalid";
-            //        valid = false;
-            //    }
-            //        //if ($('#name').val() == "" || $('#name').length < 2) {
-            //        //    $('#name').className += " invalid";
-            //        //    valid = false;
-            //        //}
-            //        //if ($('#Lname').val() == "" || $('#Lname').length < 2) {
-            //        //    $('#Lname').className += " invalid";
-            //        //    valid = false;
-            //        //}
-            //    //}
-            //    if (x == 1) {
-            //        if (y[i].value == "" || y[i].value.length != 9) {
-            //            y[i].className += " invalid";
-            //            valid = false;
-            //        }
-            //        if ($('#phone').val().length != 10) {
-            //            $('#phone').className += " invalid";
-            //            alert("should be 10 digits");
-            //            valid = false;
-            //        }
-                    //if ($('#id_User').val().length != 9) {
-                    //    $('#id_User').className += " invalid";
-                    //    alert("should be 9 digits!");
-                    //    valid = false;
-                    //}
-                    //if ($('#phone').val().length != 10) {
-                    //    $('#phone').className += " invalid";
-                    //    alert("should be 10 digits");
-                    //    valid = false;
-                    //}
-                    //if ($('#mail').val() != "") {
-                    //    var m = document.forms["Form"]["user_email"].value;
-                    //    var atpos = m.indexOf("@");
-                    //    var dotpos = m.lastIndexOf(".");
-                    //    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= m.length) {
-                    //        $('#mail').className += " invalid";
-                    //        alert("Not a valid e-mail address");
-                    //        valid = false;
-                    //    }
-                    //}
-                    //if ($("#citym").select() != true) {
-                    //    alert("chose city!");
-                    //    valid = false;
-                    //}
-                //}
+        //function validateForm() {
+        //    // This function deals with validation of the form fields
+        //    let x, y, i, valid = true, name, lname, phone, mail, id;
+        //    x = document.getElementsByClassName("tab");
+        //    y = x[currentTab];
+        //    name = $("#name").val();
+        //    lname = $('#Lname').val();
+        //    phone = $('#phone').val();
+        //    id = $('#id_User').val();
+        //    mail = $('#mail').val();
 
 
+        //    if (x[currentTab] == x[0]) {
+
+        //        if (name == "" || name.length < 2) {
+        //            alert("should be 10 digits");
+        //            //$("#name").css("background-color", "aliceblue");
+        //            notValid("#name");
+        //            valid = false;
+        //        }
+
+        //        if (lname == "" || lname.length < 2) {
+        //            notValid('#Lname');
+        //            valid = false;
+        //        }
+        //    }
+        //    //if () { נשים פה גנדר
+
+        //    //}
+
+        //    if (x[currentTab] == x[1]) {
+
+        //        if (phone.length != 10) {
+        //            notValid('#phone');
+        //            alert("should be 10 digits");
+        //            valid = false;
+        //        }
+
+        //        if (id.length != 9) {
+        //            notValid('#id_User');
+        //            alert("should be 9 digits!");
+        //            valid = false;
+        //        }
 
 
+        //        if (mail != "") {
+
+        //            var atpos = mail.indexOf("@");
+        //            var dotpos = mail.lastIndexOf(".");
+        //            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= mail.length) {
+        //                notValid('#mail');
+        //                alert("Not a valid e-mail address");
+        //                valid = false;
+        //            }
+        //        }
+        //        else {
+        //            notValid('#mail');
+        //            alert("Please enter e-mail");
+        //            valid = false;
+        //        }
+        //        //if ($("#citym").select() != true) {
+        //        //    alert("chose city!");
+        //        //    valid = false;
+        //        //}
+
+        //    }
 
 
-                // If a field is empty...
-                //if (y[i].value == "") {
-                //    // add an "invalid" class to the field:
-                //    y[i].className += " invalid";
-                //    // and set the current valid status to false
-                //    valid = false;
-                //}
-            //}
-            // If the valid status is true, mark the step as finished and valid:
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-            }
-            return valid; // return the valid status
-        }
+        //    // If the valid status is true, mark the step as finished and valid:
+        //    if (valid) {
+        //        document.getElementsByClassName("step")[currentTab].className += " finish";
+        //    }
+        //    return valid; // return the valid status
+        //}
 
         function fixStepIndicator(n) {
             // This function removes the "active" class of all steps...
@@ -219,7 +195,9 @@
 
 
 
-
+        //function notValid(val) {
+        //    $(val).css("background-color", "#ffdddd");
+        //}
 
 
         // ביטול או סיום מוצלח של הרישום
@@ -281,7 +259,7 @@
 
         // step 1
 
-        
+
 
 
         //step 2
@@ -310,7 +288,7 @@
         //משהו לא מסתדר בפונקציה הזאת כוסעמק
 
         function childDetails(val) {
-            var day="", month="", year="";
+            var day = "", month = "", year = "";
             alert(val);
             if (val == 0) {
                 alert("never to late to make some");
@@ -320,23 +298,23 @@
 
                     var childName = `<label for="childName">שם</label><input type="text" id="${i}" name="childName" data-mini="true">`;
                     var childDate = `
-                                  <label for= "controlgroup" >: תאריך לידה</label>
-                        <div data-role="controlgroup" data-type="horizontal" data-mini="true" id="dateofchild">
-                                    <div class="float">
-                              <select id = "Childday"></select></div>
-                              <div class="float"><select id="Childmonth"></select></div>
-                             <div class="float"><select id="Childyear"></select></div></div>`;
+                                      <label for= "controlgroup" >: תאריך לידה</label>
+                            <div data-role="controlgroup" data-type="horizontal" data-mini="true" id="dateofchild">
+                                        <div class="float">
+                                  <select id = "Childday"></select></div>
+                                  <div class="float"><select id="Childmonth"></select></div>
+                                 <div class="float"><select id="Childyear"></select></div></div>`;
                     for (var d = 1; d < 32; d++) {
-                        day += '<option>'+d+'</option>';
-                        
+                        day += '<option>' + d + '</option>';
+
                     }
                     for (var m = 1; m < 13; m++) {
-                        month += '<option>' + m +'</option>';
+                        month += '<option>' + m + '</option>';
                     }
                     for (var y = 1990; y < 2019; y++) {
-                        year += '<option>' + y +'</option>';
+                        year += '<option>' + y + '</option>';
                     }
-                         
+
                     alert(childName[i]);
                     $("#childDet").append(childName);
                     $("#Childday").append(day);
@@ -379,7 +357,7 @@
 
         // פתיחת הקטגוריות באג'קס- לשנות בסקל על מנת שיעבוד
         function openCategory() {
-            AjaxJsonHandler(systemHelper.webApiEndPoints.CategoryChoice, systemHelper.HttpVerbs.GET, null, showCategory, GenericError);
+            AjaxJsonHandler(systemHelper.webApiEndPoints.SubCategory, systemHelper.HttpVerbs.GET, null, showCategory, GenericError);
             //document.getElementById("myForm").style.display = "normal";
         }
 
@@ -389,19 +367,60 @@
 
                 $("#categoryChice").append(BringCategory(category[i]));
 
-            }
-        }
 
-        function BringCategory(category) {
+            }
+
+            //for (let x in category) {
+                
+                
+            //}
+
+        }
+        function heartRate(category, input) {
+            
+            let slider = document.getElementById(category);
+            
+            let heart;
+            
+            heart = document.getElementsByClassName("h6");
+            for (var i = 0; i < heart.length; i++) {
+                if (heart[i].id == category) {
+                    heart[i].innerHTML = input;
+                }
+            }
+
+            //let categorySelected = {
+            //    slider
+            //}
+            
+
+            //if (slider == heart[0]) {
+            //    $(heart).append(input);
+            //    alert(heart);
+            //}
+            
+            //let heart = val;
+            //if (slider == heart) {
+            //    $(heart).append(".heart");
+            //    $(heart).append(input);
+            //}
+            
+
+        }
+        function BringCategory(category) {   /* data-name="${category.CategoryChoiceNo}" id="categoryChice"*/ /**/
             var inCategory = `
-                                <div class="list" data-name="${category.CategoryChoiceNo}" id="categoryChice"">
-                                    <p>${category.CategoryChoiceName}
-                                      <input type="range" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" data-mini="true" value="50" min="0" max="100" data-show-value="true">
-                                          </p></div></br>
-                                            `;
+                                    <div class="list">  
+                                       
+                                   <div class="heart"><h6 class="h6" id="${category.CategoryChoiceNo}"></h6></div>
+                                            <div>${category.CategoryChoiceName}<p>
+                                          <input type="range" class="slider" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" onchange="heartRate(this.id, this.value)" data-mini="true" value="50" min="0" max="100" data-show-value="true">
+                                              </p></div></div>
+                                                `;
+            
 
             return inCategory;
         }
+        
 
     </script>
 </head>
@@ -631,14 +650,14 @@
                 </div>
                 <div id="childDet"></div>
 
-                
+
             </div>
 
             <div class="tab">
                 <h1><span class="number">4</span>Step </h1>
 
                 <div>
-                    <span class="fa fa-arrow-down">תחומי עניין</span>
+                    <label class="fa fa-arrow-down">תחומי עניין</label>
                     <div id="categoryChice"></div>
 
 

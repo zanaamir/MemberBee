@@ -28,7 +28,7 @@ var systemHelper = {
         club: "/api/club/",
         customer: "/api/club",
         AddCustomerToClub: "/api/AddCustomerToClub/",
-        CategoryChoice: "/api/CategoryChoice",
+        SubCategory: "/api/SubCategory",
         Child: "/api/Child"
 
     },

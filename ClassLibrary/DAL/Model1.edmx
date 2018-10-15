@@ -46,7 +46,7 @@
             <PropertyRef Name="CategoryNo" />
           </Key>
           <Property Name="CategoryNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CategoryName" Type="int" />
+          <Property Name="GeneralCategoryName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -565,9 +565,9 @@
             <PropertyRef Name="CategoryNo" />
           </Key>
           <Property Name="CategoryNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryName" Type="Int32" />
           <NavigationProperty Name="subCategories" Relationship="Self.FKsubCategor206567" FromRole="Categories" ToRole="subCategory" />
           <NavigationProperty Name="Clubs" Relationship="Self.Club_Categories" FromRole="Categories" ToRole="Club" />
+          <Property Name="GeneralCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Category1">
           <Key>
@@ -1014,8 +1014,8 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="igroup36_prodModel.Category">
               <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="GeneralCategoryName" ColumnName="GeneralCategoryName" />
                 <ScalarProperty Name="CategoryNo" ColumnName="CategoryNo" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
