@@ -17,6 +17,7 @@ namespace ClassLibrary.DAL
         public int CustomerIdNumber { get; set; }
         public int subCategorySubNo { get; set; }
         public Nullable<int> checkedDate { get; set; }
+        public Nullable<int> howMuchLike { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual subCategory subCategory { get; set; }

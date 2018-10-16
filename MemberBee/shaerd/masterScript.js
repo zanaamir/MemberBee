@@ -44,7 +44,8 @@ var systemHelper = {
         user: "user",
         club: "club", // changed from clubId : "clubId"
         NewClient: "NewClient",
-        NewChild: "NewChild"
+        NewChild: "NewChild",
+        categorySelected: "categorySelected"
 
     },
     getFromStorege: function (key) {

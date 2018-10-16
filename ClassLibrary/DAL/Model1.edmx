@@ -160,6 +160,7 @@
           <Property Name="CustomerIdNumber" Type="int" Nullable="false" />
           <Property Name="subCategorySubNo" Type="int" Nullable="false" />
           <Property Name="checkedDate" Type="int" />
+          <Property Name="howMuchLike" Type="int" />
         </EntityType>
         <EntityType Name="Required Fields">
           <Key>
@@ -680,6 +681,7 @@
           <Property Name="checkedDate" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FKCustomer_s797966" FromRole="Customer_subCategory" ToRole="Customer" />
           <NavigationProperty Name="subCategory" Relationship="Self.FKCustomer_s126698" FromRole="Customer_subCategory" ToRole="subCategory" />
+          <Property Name="howMuchLike" Type="Int32" />
         </EntityType>
         <EntityType Name="Required_Field">
           <Key>
@@ -1108,6 +1110,7 @@
           <EntitySetMapping Name="Customer_subCategory">
             <EntityTypeMapping TypeName="igroup36_prodModel.Customer_subCategory">
               <MappingFragment StoreEntitySet="Customer_subCategory">
+                <ScalarProperty Name="howMuchLike" ColumnName="howMuchLike" />
                 <ScalarProperty Name="CustomerIdNumber" ColumnName="CustomerIdNumber" />
                 <ScalarProperty Name="subCategorySubNo" ColumnName="subCategorySubNo" />
                 <ScalarProperty Name="checkedDate" ColumnName="checkedDate" />

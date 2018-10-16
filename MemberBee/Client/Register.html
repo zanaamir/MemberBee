@@ -83,7 +83,7 @@
             // This function will figure out which tab to display
             var x = document.getElementsByClassName("tab");
             // Exit the function if any field in the current tab is invalid:
-            //if (n == 1/* && !validateForm()*/) return false;
+            if (n == 1 && !validateForm()) return false;
             // Hide the current tab:
 
             //x[currentTab].className = "tab w3-hide";
@@ -108,80 +108,80 @@
             //showTab(currentTab);
         }
 
-        //function validateForm() {
-        //    // This function deals with validation of the form fields
-        //    let x, y, i, valid = true, name, lname, phone, mail, id;
-        //    x = document.getElementsByClassName("tab");
-        //    y = x[currentTab];
-        //    name = $("#name").val();
-        //    lname = $('#Lname').val();
-        //    phone = $('#phone').val();
-        //    id = $('#id_User').val();
-        //    mail = $('#mail').val();
+        function validateForm() {
+            // This function deals with validation of the form fields
+            let x, y, i, valid = true, name, lname, phone, mail, id;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab];
+            name = $("#name").val();
+            lname = $('#Lname').val();
+            phone = $('#phone').val();
+            id = $('#id_User').val();
+            mail = $('#mail').val();
 
 
-        //    if (x[currentTab] == x[0]) {
+            if (x[currentTab] == x[0]) {
 
-        //        if (name == "" || name.length < 2) {
-        //            alert("should be 10 digits");
-        //            //$("#name").css("background-color", "aliceblue");
-        //            notValid("#name");
-        //            valid = false;
-        //        }
+                if (name == "" || name.length < 2) {
+                    
+                    //$("#name").css("background-color", "aliceblue");
+                    notValid("#name");
+                    valid = false;
+                }
 
-        //        if (lname == "" || lname.length < 2) {
-        //            notValid('#Lname');
-        //            valid = false;
-        //        }
-        //    }
-        //    //if () { נשים פה גנדר
+                if (lname == "" || lname.length < 2) {
+                    notValid('#Lname');
+                    valid = false;
+                }
+            }
+            //if () { נשים פה גנדר
 
-        //    //}
+            //}
 
-        //    if (x[currentTab] == x[1]) {
+            if (x[currentTab] == x[1]) {
 
-        //        if (phone.length != 10) {
-        //            notValid('#phone');
-        //            alert("should be 10 digits");
-        //            valid = false;
-        //        }
+                if (phone.length != 10) {
+                    notValid('#phone');
+                    alert("should be 10 digits");
+                    valid = false;
+                }
 
-        //        if (id.length != 9) {
-        //            notValid('#id_User');
-        //            alert("should be 9 digits!");
-        //            valid = false;
-        //        }
-
-
-        //        if (mail != "") {
-
-        //            var atpos = mail.indexOf("@");
-        //            var dotpos = mail.lastIndexOf(".");
-        //            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= mail.length) {
-        //                notValid('#mail');
-        //                alert("Not a valid e-mail address");
-        //                valid = false;
-        //            }
-        //        }
-        //        else {
-        //            notValid('#mail');
-        //            alert("Please enter e-mail");
-        //            valid = false;
-        //        }
-        //        //if ($("#citym").select() != true) {
-        //        //    alert("chose city!");
-        //        //    valid = false;
-        //        //}
-
-        //    }
+                if (id.length != 9) {
+                    notValid('#id_User');
+                    alert("should be 9 digits!");
+                    valid = false;
+                }
 
 
-        //    // If the valid status is true, mark the step as finished and valid:
-        //    if (valid) {
-        //        document.getElementsByClassName("step")[currentTab].className += " finish";
-        //    }
-        //    return valid; // return the valid status
-        //}
+                if (mail != "") {
+
+                    var atpos = mail.indexOf("@");
+                    var dotpos = mail.lastIndexOf(".");
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= mail.length) {
+                        notValid('#mail');
+                        alert("Not a valid e-mail address");
+                        valid = false;
+                    }
+                }
+                else {
+                    notValid('#mail');
+                    alert("Please enter e-mail");
+                    valid = false;
+                }
+                //if ($("#citym").select() != true) {
+                //    alert("chose city!");
+                //    valid = false;
+                //}
+
+            }
+
+
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
 
         function fixStepIndicator(n) {
             // This function removes the "active" class of all steps...
@@ -195,9 +195,9 @@
 
 
 
-        //function notValid(val) {
-        //    $(val).css("background-color", "#ffdddd");
-        //}
+        function notValid(val) {
+            $(val).css("background-color", "#ffdddd");
+        }
 
 
         // ביטול או סיום מוצלח של הרישום
@@ -225,18 +225,20 @@
                 DateOfBirth: $("#day").val() + " " + $("#month").val() + " " + $("#year").val(),
                 address: $("#address").val(),
                 CityCityNumber: $("#citym").val(),
-                gender: x
+                gender: x,
+                NoOfKids: $("#childNo")
 
             };
 
             localStorage.setItem(systemHelper.storege.NewClient, JSON.stringify(NewClient));
+            var ClientCategory = JSON.parse(localStorage.getItem(systemHelper.storege.categorySelected));
 
             $.ajax({
                 datatype: "json",
                 url: "/api/Registration/",
                 contentType: "application/json; charset=utf-8",
                 method: "POST",
-                data: JSON.stringify(NewClient),
+                data: JSON.stringify(NewClient, ClientCategory),
                 success: function (data) {
 
                     alert(" ברוך הבא " + $('#name').val());
@@ -253,14 +255,13 @@
 
                 }
             });
+
+            AjaxJsonHandler(systemHelper.webApiEndPoints., systemHelper.HttpVerbs.POST, systemHelper.storege.NewChild[x], childrenyes(), GenericError);
+            
         }
 
 
-
         // step 1
-
-
-
 
         //step 2
 
@@ -289,6 +290,8 @@
 
         function childDetails(val) {
             var day = "", month = "", year = "";
+            
+        
             alert(val);
             if (val == 0) {
                 alert("never to late to make some");
@@ -387,11 +390,16 @@
                 if (heart[i].id == category) {
                     heart[i].innerHTML = input;
                 }
+                let categorySelected = {
+                    howMuchLike: $(heart[i].innerHTML),
+                    SubNo: $(slider[i])
+                };
+                localStorage.setItem(systemHelper.storege.categorySelected, JSON.stringify(categorySelected));
             }
+            
 
-            //let categorySelected = {
-            //    slider
-            //}
+
+           
             
 
             //if (slider == heart[0]) {
@@ -411,9 +419,9 @@
             var inCategory = `
                                     <div class="list">  
                                        
-                                   <div class="heart"><h6 class="h6" id="${category.CategoryChoiceNo}"></h6></div>
-                                            <div>${category.CategoryChoiceName}<p>
-                                          <input type="range" class="slider" id="${category.CategoryChoiceNo}" name="${category.CategoryChoiceName}" onchange="heartRate(this.id, this.value)" data-mini="true" value="50" min="0" max="100" data-show-value="true">
+                                   <div class="heart"><h6 class="h6" id="${category.SubNo}"></h6></div>
+                                            <div>${category.SubCategoryName}<p>
+                                          <input type="range" class="slider" id="${category.SubNo}" name="${category.SubCategoryName}" onchange="heartRate(this.id, this.value)" data-mini="true" value="50" min="0" max="100" data-show-value="true">
                                               </p></div></div>
                                                 `;
             
@@ -637,7 +645,7 @@
                 </div>
                 <div class="w3-tiny">
                     <label for="ChildNo">מס' ילדים:</label>
-                    <select onchange="childDetails(this.value)" id="childNo">
+                    <select onchange="childDetails(this.value)" id="childNo" on>
                         <option selected disabled>ילדים?</option>
                         <option value="0">איו לי ילדים</option>
                         <option value="1">1</option>

@@ -13,6 +13,7 @@ namespace MemberBee.Controllers
     public class RegistrationController : ApiController
     {
         Registration new_Client;
+        CustomerSubCategory category_for_client;
 
         public RegistrationController()
         {
@@ -23,14 +24,17 @@ namespace MemberBee.Controllers
 
         [Route("api/Registration")]
         [HttpPost]
-        public void PostNewClient(Customer e)
+        public void PostNewClient(Customer e, Customer_subCategory d)
         {
 
 
-
+            category_for_client.AddSubCategoriesForClient(d);
+            category_for_client.save();
             new_Client.AddCustomer(e);
             new_Client.save();
 
         }
+
+       
     }
 }
